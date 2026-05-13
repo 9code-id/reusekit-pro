@@ -24,6 +24,7 @@ class _AppViewState extends State<AppView> {
   bool isAppsGridMode = false;
   bool isAutoPlaying = false;
   bool shouldStopAutoPlay = false;
+  final Map<String, bool> expandedGroups = {};
 
   // Filter views based on search query
   Map<String, List<Map<String, dynamic>>> get filteredViews {
@@ -215,6 +216,20 @@ class _AppViewState extends State<AppView> {
     });
   }
 
+  void _collapseAllGroups() {
+    setState(() {
+      for (final groupName in views.keys) {
+        expandedGroups[groupName] = false;
+      }
+    });
+  }
+
+  void _toggleGroupExpanded(String groupName) {
+    setState(() {
+      expandedGroups[groupName] = !(expandedGroups[groupName] ?? true);
+    });
+  }
+
   @override
   void initState() {
     super.initState();
@@ -241,6 +256,11 @@ class _AppViewState extends State<AppView> {
               });
             },
             tooltip: isAppsGridMode ? 'List View' : 'Apps Grid',
+          ),
+          IconButton(
+            icon: Icon(Icons.unfold_less),
+            onPressed: isAppsGridMode ? null : _collapseAllGroups,
+            tooltip: 'Collapse All Groups',
           ),
           IconButton(
             icon: Icon(Icons.skip_next),
@@ -333,6 +353,9 @@ class _AppViewState extends State<AppView> {
                             items: groupItems,
                             searchQuery: searchQuery,
                             groupIndex: index + 1,
+                            isExpanded: expandedGroups[groupName] ?? true,
+                            onToggleExpanded: () =>
+                                _toggleGroupExpanded(groupName),
                           );
                         },
                       ),
@@ -348,12 +371,16 @@ class _GroupSection extends StatefulWidget {
   final List<Map<String, dynamic>> items;
   final String searchQuery;
   final int groupIndex;
+  final bool isExpanded;
+  final VoidCallback onToggleExpanded;
 
   _GroupSection({
     required this.groupName,
     required this.items,
     this.searchQuery = "",
     required this.groupIndex,
+    required this.isExpanded,
+    required this.onToggleExpanded,
   });
 
   @override
@@ -361,8 +388,6 @@ class _GroupSection extends StatefulWidget {
 }
 
 class _GroupSectionState extends State<_GroupSection> {
-  bool isExpanded = true;
-
   // Auto-play views in this group with 2 second delay
   Future<void> _autoPlayGroupViews(int ms) async {
     var index = 0;
@@ -391,14 +416,11 @@ class _GroupSectionState extends State<_GroupSection> {
       child: Column(
         children: [
           InkWell(
-            onTap: () {
-              setState(() {
-                isExpanded = !isExpanded;
-              });
-            },
+            onTap: widget.onToggleExpanded,
             borderRadius: BorderRadius.vertical(
               top: Radius.circular(radiusMd),
-              bottom: isExpanded ? Radius.zero : Radius.circular(radiusMd),
+              bottom:
+                  widget.isExpanded ? Radius.zero : Radius.circular(radiusMd),
             ),
             child: Container(
               height: cardHeaderMaxHeight,
@@ -408,7 +430,9 @@ class _GroupSectionState extends State<_GroupSection> {
                 color: primaryColor,
                 borderRadius: BorderRadius.vertical(
                   top: Radius.circular(radiusMd),
-                  bottom: isExpanded ? Radius.zero : Radius.circular(radiusMd),
+                  bottom: widget.isExpanded
+                      ? Radius.zero
+                      : Radius.circular(radiusMd),
                 ),
               ),
               child: Row(
@@ -443,7 +467,7 @@ class _GroupSectionState extends State<_GroupSection> {
                     tooltip: 'Play Group Views',
                   ),
                   Icon(
-                    isExpanded ? Icons.expand_less : Icons.expand_more,
+                    widget.isExpanded ? Icons.expand_less : Icons.expand_more,
                     color: Colors.white,
                     size: 16.0,
                   ),
@@ -451,7 +475,7 @@ class _GroupSectionState extends State<_GroupSection> {
               ),
             ),
           ),
-          if (isExpanded)
+          if (widget.isExpanded)
             ResponsiveGridView(
               padding: EdgeInsets.all(spSm),
               minItemWidth: 160,

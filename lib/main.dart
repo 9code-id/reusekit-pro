@@ -1,13 +1,12 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_quill/flutter_quill.dart';
 import 'package:reusekit/core.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  //flutter onError, show view that has an error
-  FlutterError.onError = (FlutterErrorDetails details) async {
+  // Keep Flutter's default console output, then collect custom UI error logs.
+  FlutterError.onError = (FlutterErrorDetails details) {
+    FlutterError.presentError(details);
     flutterErrorHandler(details);
   };
   // await Supabase.initialize(

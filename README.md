@@ -5,6 +5,7 @@ A comprehensive Flutter framework with reusable components and standardized arch
 ## 📚 Table of Contents
 
 - [Overview](#overview)
+- [Application Categories](#application-categories)
 - [Getting Started](#getting-started)
   - [System Requirements](#system-requirements)
   - [FVM Setup (Recommended)](#fvm-setup-recommended)
@@ -31,6 +32,54 @@ ReuseKit is a Flutter framework designed to accelerate development by providing:
 - **Layout Helpers**: Responsive grid and layout components
 - **Type Extensions**: Enhanced functionality for common data types
 - **Media Components**: Image pickers, file pickers, and attachment handlers
+
+## 📱 Application Categories
+
+ReuseKit includes 43 application category groups:
+
+1. Barbershop Booking App
+2. E-commerce Shopping App
+3. Food Delivery App
+4. Real Estate App
+5. Medical Health App
+6. Fitness & Wellness App
+7. Education Learning App
+8. Banking & Finance App
+9. Travel & Tourism App
+10. Agriculture Management App
+11. Hotel & Hospitality App
+12. Logistics & Transport App
+13. Social Media & Networking App
+14. Gaming & Entertainment App
+15. News & Media App
+16. Photography & Photo Editing App
+17. Weather & Climate App
+18. Shopping & E-commerce App
+19. Healthcare & Medical App
+20. Food & Restaurant Management App
+21. Car & Transportation Management App
+22. Real Estate Management App
+23. Event Management App
+24. Inventory Management App
+25. CRM Customer Management App
+26. Project Management App
+27. Delivery & Logistics App
+28. Restaurant Management App
+29. Legal Case Management App
+30. Construction Management App
+31. Accounting & Bookkeeping App
+32. Recruitment & HR App
+33. Task & Project Management App
+34. Customer Support & CRM App
+35. Inventory & Warehouse Management App
+36. Field Service Management App
+37. Digital Marketing & SEO App
+38. Point of Sale & Retail Management App
+39. Event & Conference Management App
+40. Restaurant & Food Service Management App
+41. Appointment & Booking Management App
+42. Customer Support & Help Desk App
+43. General App
 
 ## 🚀 Getting Started
 

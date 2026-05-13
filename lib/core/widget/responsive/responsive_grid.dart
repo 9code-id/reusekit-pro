@@ -23,14 +23,24 @@ class ResponsiveGridView extends StatelessWidget {
       child: Container(
         padding: padding ?? EdgeInsets.all(spMd),
         child: LayoutBuilder(builder: (context, BoxConstraints constraints) {
-          var wantedWidth = minItemWidth ?? 460;
-          var deviceWidth = constraints.biggest.width;
-          if (wantedWidth > deviceWidth) {
-            wantedWidth = deviceWidth.toInt();
+          final mediaWidth = MediaQuery.maybeOf(context)?.size.width;
+          final availableWidth =
+              constraints.maxWidth.isFinite && constraints.maxWidth > 0
+                  ? constraints.maxWidth
+                  : mediaWidth != null && mediaWidth.isFinite && mediaWidth > 0
+                      ? mediaWidth
+                      : 1.0;
+
+          var wantedWidth = (minItemWidth ?? 460).toDouble();
+          if (wantedWidth <= 0) {
+            wantedWidth = 1.0;
+          }
+          if (wantedWidth > availableWidth) {
+            wantedWidth = availableWidth;
           }
 
           final crossAxisCount =
-              (constraints.maxWidth / wantedWidth).floor().clamp(1, 1000);
+              (availableWidth / wantedWidth).floor().clamp(1, 1000).toInt();
           return StaggeredGrid.count(
             crossAxisCount: crossAxisCount,
             crossAxisSpacing: spSm,
