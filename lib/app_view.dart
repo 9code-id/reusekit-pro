@@ -686,6 +686,8 @@ class _AppGridItem extends StatelessWidget {
                       children: [
                         Text(
                           appName,
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
                           style: TextStyle(
                             fontSize: 14,
                             fontWeight: FontWeight.bold,
