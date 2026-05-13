@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:reusekit/core.dart';
 
 class ListItem3 extends StatelessWidget {
   const ListItem3({
@@ -32,8 +33,8 @@ class ListItem3 extends StatelessWidget {
       child: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(
-              vertical: 10,
+            padding: EdgeInsets.symmetric(
+              vertical: spSm,
             ),
             child: Row(
               children: [
@@ -42,7 +43,7 @@ class ListItem3 extends StatelessWidget {
                     label,
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(
-                      fontSize: 14,
+                      fontSize: fsLg,
                       color: color,
                     ),
                   ),
@@ -64,19 +65,17 @@ class ListItem3 extends StatelessWidget {
                             overflow: TextOverflow.ellipsis,
                             textAlign: TextAlign.right,
                             style: TextStyle(
-                              fontSize: 14,
+                              fontSize: fsLg,
                               fontWeight: FontWeight.bold,
                               color: color,
                             ),
                           ),
                         ),
                         if (enableCopy) ...[
-                          const SizedBox(
-                            width: 4.0,
-                          ),
-                          const Icon(
+                          SizedBox(width: spXxs),
+                          Icon(
                             Icons.copy,
-                            size: 16.0,
+                            size: iconXs,
                           ),
                         ],
                       ],
@@ -86,10 +85,6 @@ class ListItem3 extends StatelessWidget {
               ],
             ),
           ),
-          // Container(
-          //   height: separator ? 1.0 : 0.0,
-          //   color: disabledColor.withValues(alpha:  0.4),
-          // ),
         ],
       ),
     );

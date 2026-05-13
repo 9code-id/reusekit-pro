@@ -73,7 +73,7 @@ class _QChatFieldState extends State<QChatField> {
             child: Text(
               widget.label!,
               style: TextStyle(
-                fontSize: 14,
+                fontSize: fsLg,
                 fontWeight: FontWeight.w600,
                 color: primaryColor,
               ),
@@ -155,7 +155,7 @@ class _QChatFieldState extends State<QChatField> {
                           hintText: widget.hint ?? "Type a message...",
                           hintStyle: TextStyle(
                             color: disabledBoldColor,
-                            fontSize: 14,
+                            fontSize: fsLg,
                           ),
                           border: InputBorder.none,
                           contentPadding: EdgeInsets.symmetric(
@@ -165,7 +165,7 @@ class _QChatFieldState extends State<QChatField> {
                           counterText: "",
                         ),
                         style: TextStyle(
-                          fontSize: 14,
+                          fontSize: fsLg,
                           color: Colors.black,
                         ),
                       ),
@@ -293,7 +293,7 @@ class _QChatFieldState extends State<QChatField> {
                       Text(
                         "Emojis",
                         style: TextStyle(
-                          fontSize: 14,
+                          fontSize: fsLg,
                           fontWeight: FontWeight.w600,
                         ),
                       ),
@@ -370,7 +370,7 @@ class _QChatFieldState extends State<QChatField> {
                   "Recording... Release to send",
                   style: TextStyle(
                     color: dangerColor,
-                    fontSize: 14,
+                    fontSize: fsLg,
                     fontWeight: FontWeight.w600,
                   ),
                 ),

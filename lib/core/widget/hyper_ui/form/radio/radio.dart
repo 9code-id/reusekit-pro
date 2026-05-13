@@ -44,15 +44,17 @@ class _QRadioFieldState extends State<QRadioField> {
       item['checked'] = false;
     }
   }
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: textfieldMaxHeight * items.length,
+    return ConstrainedBox(
+      constraints: BoxConstraints(minHeight: textfieldMaxHeight * items.length),
       child: FormField(
         initialValue: false,
-        validator: (value) => widget.validator!(items),
+        validator: (value) =>
+            widget.validator == null ? null : widget.validator!(items),
         builder: (FormFieldState<bool> field) {
-          return InputDecorator( 
+          return InputDecorator(
             decoration: InputDecoration(
               contentPadding: EdgeInsets.symmetric(
                 horizontal: spMd,
@@ -60,21 +62,22 @@ class _QRadioFieldState extends State<QRadioField> {
               labelText: widget.label,
               errorText: field.errorText,
               border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(8),
+                borderRadius: BorderRadius.circular(radiusMd),
                 borderSide: BorderSide(color: Colors.grey.shade300),
               ),
               enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(8),
+                borderRadius: BorderRadius.circular(radiusMd),
                 borderSide: BorderSide(color: Colors.grey.shade300),
               ),
               focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(8),
+                borderRadius: BorderRadius.circular(radiusMd),
                 borderSide: BorderSide(color: primaryColor),
               ),
               helperText: widget.helper,
               hintText: widget.hint,
             ),
             child: Column(
+              mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,
               spacing: spMd,
               children: items.map((item) {
@@ -87,20 +90,23 @@ class _QRadioFieldState extends State<QRadioField> {
                     setState(() {});
 
                     final String? label = items[index]['label'];
-                    final foundIndex = items
-                        .indexWhere((item) => item['label'] == label);
+                    final foundIndex =
+                        items.indexWhere((item) => item['label'] == label);
                     final dynamic value = items[foundIndex]['value'];
                     widget.onChanged(value, label);
                   },
-                  child: Container(
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(vertical: spXs),
                     child: Row(
                       children: [
                         Expanded(
                           child: Text(
                             "${item["label"]}",
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
                             style: TextStyle(
-                              fontSize: 14,
-                              color: Colors.black87,
+                              fontSize: fsLg,
+                              color: textColor,
                             ),
                           ),
                         ),

@@ -74,8 +74,9 @@ class _QCategoryPickerState extends State<QCategoryPicker> {
     return LayoutBuilder(builder: (context, BoxConstraints constraints) {
       return FormField(
         initialValue: false,
-        validator: (value) =>
-            widget.validator!(selectedIndex == -1 ? null : selectedIndex),
+        validator: (value) => widget.validator == null
+            ? null
+            : widget.validator!(selectedIndex == -1 ? null : selectedIndex),
         builder: (FormFieldState<bool> field) {
           return InputDecorator(
             decoration: InputDecoration(
@@ -97,7 +98,7 @@ class _QCategoryPickerState extends State<QCategoryPicker> {
                   Radius.circular(8.0),
                 ),
               ),
-              width: MediaQuery.of(context).size.width,
+              width: double.infinity,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 spacing: spSm,
@@ -105,7 +106,7 @@ class _QCategoryPickerState extends State<QCategoryPicker> {
                   if (widget.mode == CategoryPickerMode.scrollable)
                     Container(
                       height: 38.0,
-                      width: MediaQuery.of(context).size.width,
+                      width: double.infinity,
                       // padding: EdgeInsets.all(8.0),
                       decoration: BoxDecoration(
                         // color: Theme.of(context).cardColor,
@@ -124,8 +125,7 @@ class _QCategoryPickerState extends State<QCategoryPicker> {
                               bool selected = selectedIndex == index;
                               return Theme(
                                 data: Theme.of(context).copyWith(
-                                  elevatedButtonTheme:
-                                      ElevatedButtonThemeData(
+                                  elevatedButtonTheme: ElevatedButtonThemeData(
                                     style: ElevatedButton.styleFrom(
                                       elevation: 0.0,
                                       backgroundColor: selected
@@ -149,9 +149,8 @@ class _QCategoryPickerState extends State<QCategoryPicker> {
                                   ),
                                   child: QButton(
                                     label: items[index]['label'],
-                                    color: selected
-                                        ? primaryColor
-                                        : disabledColor,
+                                    color:
+                                        selected ? primaryColor : disabledColor,
                                     onPressed: () {
                                       updateIndex(index);
                                     },
@@ -165,7 +164,7 @@ class _QCategoryPickerState extends State<QCategoryPicker> {
                     )
                   else if (widget.mode == CategoryPickerMode.wrap)
                     Container(
-                      width: MediaQuery.of(context).size.width,
+                      width: double.infinity,
                       child: Wrap(
                         spacing: spSm, // Use spSm from themeConfig
                         runSpacing: spSm, // Use spSm from themeConfig
@@ -173,12 +172,11 @@ class _QCategoryPickerState extends State<QCategoryPicker> {
                           items.length,
                           (int index) {
                             bool selected = selectedIndex == index;
-                            return Container(
+                            return SizedBox(
                               height: 38.0,
                               child: QButton(
                                 label: items[index]['label'],
-                                color:
-                                    selected ? primaryColor : secondaryColor,
+                                color: selected ? primaryColor : secondaryColor,
                                 onPressed: () {
                                   updateIndex(index);
                                 },
@@ -190,7 +188,7 @@ class _QCategoryPickerState extends State<QCategoryPicker> {
                     )
                   else
                     Container(
-                      width: MediaQuery.of(context).size.width,
+                      width: double.infinity,
                       // padding: EdgeInsets.all(8.0),
                       decoration: BoxDecoration(
                         color: secondaryColor,
@@ -207,8 +205,7 @@ class _QCategoryPickerState extends State<QCategoryPicker> {
                             return Expanded(
                               child: Theme(
                                 data: Theme.of(context).copyWith(
-                                  elevatedButtonTheme:
-                                      ElevatedButtonThemeData(
+                                  elevatedButtonTheme: ElevatedButtonThemeData(
                                     style: ElevatedButton.styleFrom(
                                       elevation: 0.0,
                                       backgroundColor: selected
@@ -228,9 +225,8 @@ class _QCategoryPickerState extends State<QCategoryPicker> {
                                 ),
                                 child: QButton(
                                   label: items[index]['label'],
-                                  color: selected
-                                      ? primaryColor
-                                      : secondaryColor,
+                                  color:
+                                      selected ? primaryColor : secondaryColor,
                                   onPressed: () {
                                     updateIndex(index);
                                   },

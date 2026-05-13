@@ -64,8 +64,8 @@ class _QRatingFieldState extends State<QRatingField> {
         return null;
       },
       builder: (field) {
-        return Container(
-          height: textfieldMaxHeight,
+        return ConstrainedBox(
+          constraints: BoxConstraints(minHeight: textfieldMaxHeight),
           key: widgetKey,
           child: LayoutBuilder(
             builder: (context, constraints) {
@@ -87,7 +87,7 @@ class _QRatingFieldState extends State<QRatingField> {
                         top: spMd,
                         left: 20,
                       ),
-                      width: MediaQuery.of(context).size.width,
+                      width: double.infinity,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.center,

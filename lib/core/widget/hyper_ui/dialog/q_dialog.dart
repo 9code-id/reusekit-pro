@@ -51,10 +51,10 @@ class _QDialogState extends State<QDialog> {
 
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.all(16.0),
+      padding: EdgeInsets.all(spLg),
       decoration: BoxDecoration(
         color: widget.isOutlined ? Theme.of(context).cardColor : mainColor,
-        borderRadius: BorderRadius.circular(8.0),
+        borderRadius: BorderRadius.circular(radiusMd),
         border: widget.isOutlined ? Border.all(color: mainColor) : null,
       ),
       child: Column(
@@ -69,7 +69,7 @@ class _QDialogState extends State<QDialog> {
                   widget.icon,
                   color: iconOrTextColor,
                 ),
-              if (widget.icon != null) SizedBox(width: 12.0), // spSm spacing
+              if (widget.icon != null) SizedBox(width: spMd),
               if (widget.title != null)
                 Expanded(
                   child: Text(
@@ -88,13 +88,13 @@ class _QDialogState extends State<QDialog> {
                 ),
             ],
           ),
-          if (widget.title != null) SizedBox(height: 8.0),
+          if (widget.title != null) SizedBox(height: spSm),
           Text(
             widget.message,
             style: TextStyle(color: iconOrTextColor),
           ),
           if (widget.actions.isNotEmpty) ...[
-            SizedBox(height: 16.0),
+            SizedBox(height: spLg),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               spacing: spSm,

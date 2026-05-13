@@ -36,7 +36,7 @@ class _QCarouselState extends State<QCarousel> {
       clipBehavior: Clip.antiAlias,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.all(
-          Radius.circular(12.0),
+          Radius.circular(radiusXl),
         ),
       ),
       child: Column(
@@ -66,8 +66,8 @@ class _QCarouselState extends State<QCarousel> {
                             margin: const EdgeInsets.symmetric(horizontal: 5),
                             decoration: BoxDecoration(
                               color: Colors.grey[300],
-                              borderRadius: const BorderRadius.all(
-                                Radius.circular(6),
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(radiusSm),
                               ),
                               image: DecorationImage(
                                 image: NetworkImage(
@@ -150,8 +150,8 @@ class _QCarouselState extends State<QCarousel> {
                             margin: const EdgeInsets.symmetric(horizontal: 5),
                             decoration: BoxDecoration(
                               color: Colors.grey[200],
-                              borderRadius: const BorderRadius.all(
-                                Radius.circular(6),
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(radiusSm),
                               ),
                               image: DecorationImage(
                                 image: NetworkImage(
@@ -232,8 +232,8 @@ class _QCarouselState extends State<QCarousel> {
                             margin: const EdgeInsets.symmetric(vertical: 5),
                             decoration: BoxDecoration(
                               color: Colors.grey[200],
-                              borderRadius: const BorderRadius.all(
-                                Radius.circular(6),
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(radiusSm),
                               ),
                               image: DecorationImage(
                                 image: NetworkImage(
@@ -321,8 +321,8 @@ class _QCarouselState extends State<QCarousel> {
                                     const EdgeInsets.symmetric(horizontal: 5),
                                 decoration: BoxDecoration(
                                   color: Colors.grey[200],
-                                  borderRadius: const BorderRadius.all(
-                                    Radius.circular(6),
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(radiusSm),
                                   ),
                                   image: DecorationImage(
                                     image: NetworkImage(
@@ -441,8 +441,8 @@ class _QCarouselState extends State<QCarousel> {
                                     const EdgeInsets.symmetric(horizontal: 5),
                                 decoration: BoxDecoration(
                                   color: Colors.grey[200],
-                                  borderRadius: const BorderRadius.all(
-                                    Radius.circular(6),
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(radiusSm),
                                   ),
                                   image: DecorationImage(
                                     image: NetworkImage(
@@ -513,8 +513,8 @@ class _QCarouselState extends State<QCarousel> {
                               color: isSelected
                                   ? primaryColor
                                   : primaryColor.withValues(alpha: 0.6),
-                              borderRadius: const BorderRadius.all(
-                                Radius.circular(12),
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(radiusXl),
                               ),
                             ),
                           ),
@@ -617,8 +617,8 @@ class _QCarouselState extends State<QCarousel> {
                       child: Container(
                         padding: const EdgeInsets.all(4.0),
                         decoration: BoxDecoration(
-                          borderRadius: const BorderRadius.all(
-                            Radius.circular(12.0),
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(radiusXl),
                           ),
                           color: Colors.black.withValues(alpha: 0.4),
                         ),
@@ -640,8 +640,8 @@ class _QCarouselState extends State<QCarousel> {
                                   color: isSelected
                                       ? Colors.white
                                       : Colors.white.withValues(alpha: 0.6),
-                                  borderRadius: const BorderRadius.all(
-                                    Radius.circular(12),
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(radiusXl),
                                   ),
                                 ),
                               ),

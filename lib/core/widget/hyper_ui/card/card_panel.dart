@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:reusekit/core.dart';
 
 class CardPanel extends StatelessWidget {
   const CardPanel({
@@ -13,18 +14,16 @@ class CardPanel extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: padding ??
-          const EdgeInsets.symmetric(
-            horizontal: 12,
+          EdgeInsets.symmetric(
+            horizontal: spMd,
           ),
       decoration: BoxDecoration(
         border: Border.all(
-          color: Colors.grey[300]!,
+          color: disabledOutlineBorderColor,
         ),
         color: Colors.grey[100],
-        borderRadius: const BorderRadius.all(
-          Radius.circular(
-            8,
-          ),
+        borderRadius: BorderRadius.all(
+          Radius.circular(radiusMd),
         ),
       ),
       child: Column(

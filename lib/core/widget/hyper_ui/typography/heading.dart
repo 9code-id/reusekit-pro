@@ -42,6 +42,8 @@ class HeadingWidget extends StatelessWidget {
               children: [
                 Text(
                   title,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
                   style: TextStyle(
                     fontSize: titleFontSize,
                     fontWeight: FontWeight.bold,
@@ -50,6 +52,8 @@ class HeadingWidget extends StatelessWidget {
                 if (subtitle != null)
                   Text(
                     subtitle!,
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
                     style: TextStyle(
                       fontSize: titleFontSize - 4,
                       color: textColor,
@@ -59,22 +63,35 @@ class HeadingWidget extends StatelessWidget {
             ),
           ),
           if (trailing != null)
-            InkWell(
-              focusColor: Colors.transparent,
-              hoverColor: Colors.transparent,
-              highlightColor: Colors.transparent,
-              onTap: () {
-                if (onPressed != null) onPressed!();
-              },
-              child: Text(
-                trailing!,
-                style: TextStyle(
-                  fontSize: trailingFontSize,
-                  color: primaryColor,
+            Flexible(
+              child: InkWell(
+                focusColor: Colors.transparent,
+                hoverColor: Colors.transparent,
+                highlightColor: Colors.transparent,
+                onTap: () {
+                  if (onPressed != null) onPressed!();
+                },
+                child: Text(
+                  trailing!,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                    fontSize: trailingFontSize,
+                    color: primaryColor,
+                  ),
                 ),
               ),
             ),
-          ...actions
+          if (actions.isNotEmpty)
+            Flexible(
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: actions,
+                ),
+              ),
+            ),
         ],
       ),
     );

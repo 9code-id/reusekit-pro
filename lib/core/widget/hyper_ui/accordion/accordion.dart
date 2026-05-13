@@ -5,7 +5,8 @@ class AccordionSection extends StatelessWidget {
   final String title;
   final List<AccordionItem> children;
 
-  const AccordionSection({super.key, required this.title, required this.children});
+  const AccordionSection(
+      {super.key, required this.title, required this.children});
 
   @override
   Widget build(BuildContext context) {
@@ -14,6 +15,8 @@ class AccordionSection extends StatelessWidget {
       children: [
         Text(
           title,
+          maxLines: 2,
+          overflow: TextOverflow.ellipsis,
           style: TextStyle(
             fontSize: fsLg,
             fontWeight: FontWeight.bold,
@@ -31,7 +34,8 @@ class AccordionItem extends StatefulWidget {
   final Widget content;
   final IconData? icon;
 
-  const AccordionItem({super.key, 
+  const AccordionItem({
+    super.key,
     required this.title,
     required this.content,
     this.icon,
@@ -49,32 +53,39 @@ class _AccordionItemState extends State<AccordionItem> {
     return Card(
       child: Column(
         children: [
-          ListTile(
-            title: Row(
-              children: [
-                if (widget.icon != null) Icon(widget.icon, size: 20),
-                if (widget.icon != null) SizedBox(width: spXs),
-                Text(
-                  widget.title,
-                  style: TextStyle(
-                    color: textColor,
-                  ),
-                ),
-              ],
-            ),
-            trailing: Icon(
-              isExpanded ? Icons.expand_less : Icons.expand_more,
-              color: textColor,
-            ),
+          InkWell(
             onTap: () {
               setState(() {
                 isExpanded = !isExpanded;
               });
             },
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: spMd, vertical: spSm),
+              child: Row(
+                children: [
+                  if (widget.icon != null) Icon(widget.icon, size: iconSm),
+                  if (widget.icon != null) SizedBox(width: spXs),
+                  Expanded(
+                    child: Text(
+                      widget.title,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                        color: textColor,
+                      ),
+                    ),
+                  ),
+                  Icon(
+                    isExpanded ? Icons.expand_less : Icons.expand_more,
+                    color: textColor,
+                  ),
+                ],
+              ),
+            ),
           ),
           if (isExpanded)
             Container(
-              width: MediaQuery.of(context).size.width,
+              width: double.infinity,
               padding: EdgeInsets.all(spMd),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,

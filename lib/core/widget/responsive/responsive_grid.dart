@@ -29,7 +29,8 @@ class ResponsiveGridView extends StatelessWidget {
             wantedWidth = deviceWidth.toInt();
           }
 
-          final crossAxisCount = (constraints.maxWidth ~/ wantedWidth).ceil();
+          final crossAxisCount =
+              (constraints.maxWidth / wantedWidth).floor().clamp(1, 1000);
           return StaggeredGrid.count(
             crossAxisCount: crossAxisCount,
             crossAxisSpacing: spSm,

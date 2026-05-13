@@ -9,6 +9,126 @@ class RKAppTheme {
   static const defaultColumnOrRowSpacing = 6.0;
   static const defaultCardPadding = 8.0;
 
+  static ThemeData get darkTheme {
+    return ThemeData(
+      brightness: Brightness.dark,
+      useMaterial3: true,
+      listTileTheme: ListTileThemeData(
+        minTileHeight: 0.0,
+        contentPadding: EdgeInsets.symmetric(horizontal: 0.0, vertical: 0.0),
+        minVerticalPadding: 0.0,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(radiusMd),
+        ),
+        titleTextStyle: TextStyle(fontSize: fsLg, color: Colors.white),
+      ),
+      textTheme: GoogleFonts.interTextTheme(ThemeData.dark().textTheme),
+      dividerColor: Colors.grey[700],
+      elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: primaryColor,
+          foregroundColor: Colors.white,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(radiusMd),
+          ),
+        ),
+      ),
+      tabBarTheme: TabBarThemeData(
+        unselectedLabelColor: Colors.grey[400],
+        labelColor: primaryColor,
+        labelStyle: TextStyle(fontSize: fsMd, fontWeight: FontWeight.bold),
+        unselectedLabelStyle: TextStyle(fontSize: fsMd, fontWeight: FontWeight.bold),
+      ),
+      iconButtonTheme: IconButtonThemeData(
+        style: IconButton.styleFrom(padding: EdgeInsets.zero),
+      ),
+      textButtonTheme: TextButtonThemeData(
+        style: TextButton.styleFrom(
+          foregroundColor: primaryColor,
+          textStyle: const TextStyle(fontWeight: FontWeight.bold),
+        ),
+      ),
+      outlinedButtonTheme: OutlinedButtonThemeData(
+        style: OutlinedButton.styleFrom(
+          foregroundColor: primaryColor,
+          side: BorderSide(color: primaryColor),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(radiusMd),
+          ),
+        ),
+      ),
+      cardTheme: CardThemeData(
+        color: Color(0xFF1E1E1E),
+        shadowColor: Colors.black.withValues(alpha: 0.3),
+        elevation: 4,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(radiusMd),
+        ),
+      ),
+      scaffoldBackgroundColor: Color(0xFF121212),
+      hintColor: Colors.grey[400],
+      floatingActionButtonTheme: FloatingActionButtonThemeData(
+        backgroundColor: primaryColor,
+        foregroundColor: Colors.white,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(radiusMd),
+        ),
+      ),
+      appBarTheme: AppBarTheme(
+        backgroundColor: Color(0xFF1E1E1E),
+        foregroundColor: Colors.white,
+        elevation: 0.6,
+        centerTitle: true,
+        titleTextStyle: TextStyle(fontSize: fsXl, color: Colors.white),
+      ),
+      inputDecorationTheme: InputDecorationTheme(
+        fillColor: Color(0xFF2C2C2C),
+        filled: true,
+        contentPadding: EdgeInsets.symmetric(horizontal: spSm, vertical: 0.0),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(radiusMd),
+          borderSide: BorderSide(color: Colors.grey[700]!, width: 1.0),
+        ),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(radiusMd),
+          borderSide: BorderSide(color: Colors.grey[600]!, width: 1.0),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(radiusMd),
+          borderSide: BorderSide(color: primaryColor, width: 1.0),
+        ),
+        errorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(radiusMd),
+          borderSide: BorderSide(color: dangerColor, width: 1.0),
+        ),
+        hintStyle: TextStyle(color: Colors.grey[500]),
+      ),
+      colorScheme: ColorScheme.fromSeed(
+        seedColor: primaryColor,
+        brightness: Brightness.dark,
+        primary: primaryColor,
+        secondary: Colors.grey[400]!,
+        error: dangerColor,
+        surface: Color(0xFF1E1E1E),
+      ),
+      chipTheme: ChipThemeData(
+        backgroundColor: Color(0xFF2C2C2C),
+        shadowColor: Colors.transparent,
+        selectedShadowColor: Colors.transparent,
+        elevation: 0,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(radiusMd),
+          side: BorderSide.none,
+        ),
+      ),
+      bottomNavigationBarTheme: BottomNavigationBarThemeData(
+        showSelectedLabels: true,
+        showUnselectedLabels: true,
+        backgroundColor: Color(0xFF1E1E1E),
+      ),
+    );
+  }
+
   static ThemeData get theme {
     return ThemeData(
       // Warna Primer

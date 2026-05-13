@@ -135,19 +135,18 @@ class _QLocationPickerState extends State<QLocationPicker> {
           ),
         if (widget.helper != null)
           Padding(
-            padding: const EdgeInsets.only(bottom: 8.0),
+            padding: EdgeInsets.only(bottom: spSm),
             child: Text(
               widget.helper!,
               style: Theme.of(context).textTheme.bodySmall,
             ),
           ),
-        const SizedBox(
-          height: 8.0,
+        SizedBox(
+          height: spSm,
         ),
         SizedBox(
-          //default button height
-          height: 42,
-          width: MediaQuery.of(context).size.width,
+          height: textfieldMaxHeight,
+          width: double.infinity,
           child: ElevatedButton(
             onPressed: () => _openFullScreenPicker(context),
             style: ElevatedButton.styleFrom(
@@ -173,13 +172,13 @@ class _QLocationPickerState extends State<QLocationPicker> {
               );
             },
             child: Container(
-              width: MediaQuery.of(context).size.width,
-              padding: const EdgeInsets.only(top: 8.0),
+              width: double.infinity,
+              padding: EdgeInsets.only(top: spSm),
               child: Text(
                 '${_currentLocation!.latitude}, ${_currentLocation!.longitude}',
                 textAlign: TextAlign.right,
                 style: TextStyle(
-                  fontSize: 8.0,
+                  fontSize: fsXxs,
                 ),
               ),
             ),
@@ -291,7 +290,7 @@ class _FullScreenLocationPickerState extends State<FullScreenLocationPicker> {
           onPressed: () => Navigator.of(context).pop(),
         ),
         title: Container(
-          height: 42,
+          height: textfieldMaxHeight,
           child: TextField(
             controller: _searchController,
             decoration: InputDecoration(
@@ -328,7 +327,7 @@ class _FullScreenLocationPickerState extends State<FullScreenLocationPicker> {
               child: Icon(
                 Icons.location_pin,
                 color: Colors.red,
-                size: 40,
+                size: icon2xl,
               ),
             ),
             Positioned(
@@ -376,13 +375,15 @@ class _FullScreenLocationPickerState extends State<FullScreenLocationPicker> {
                     itemBuilder: (context, index) {
                       final result = _searchResults[index];
                       return Container(
-                        padding: const EdgeInsets.all(12.0),
+                        padding: EdgeInsets.all(spMd),
                         child: ListTile(
                           title: Text(
                             result['displayName'],
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
                             style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 16.0,
+                              color: textColor,
+                              fontSize: fsXl,
                             ),
                           ),
                           onTap: () {

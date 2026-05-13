@@ -91,8 +91,8 @@ class _QPercentageFieldState extends State<QPercentageField> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: textfieldMaxHeight,
+    return ConstrainedBox(
+      constraints: BoxConstraints(minHeight: textfieldMaxHeight),
       child: TextFormField(
         enabled: widget.enabled,
         controller: textEditingController,

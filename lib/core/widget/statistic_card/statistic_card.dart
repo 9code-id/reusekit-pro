@@ -38,7 +38,7 @@ class StatisticCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: height ?? 90.0,
       child: Card(
         color: mode == StatisticCardMode.outlined ? Colors.white : color,
@@ -82,33 +82,30 @@ class StatisticCard extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Expanded(
-                            // flex: height == null ? 0 : 2,
-                            flex: 0,
-                            child: Container(
-                                transform: Matrix4.translationValues(
-                                  0.0,
-                                  height == null
-                                      ? 0
-                                      : constraints.maxHeight * 0.1,
-                                  0,
-                                ),
-                                child: Text(
-                                  title,
-                                  style: TextStyle(
-                                    fontSize: 12,
-                                    color: mode == StatisticCardMode.outlined
-                                        ? color
-                                        : Colors.white,
-                                  ),
-                                )),
+                          Transform.translate(
+                            offset: Offset(
+                              0,
+                              height == null ? 0 : constraints.maxHeight * 0.1,
+                            ),
+                            child: Text(
+                              title,
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: mode == StatisticCardMode.outlined
+                                    ? color
+                                    : Colors.white,
+                              ),
+                            ),
                           ),
-                          Expanded(
-                            // flex: height == null ? 0 : 3,
-                            flex: 0,
+                          Flexible(
                             child: FittedBox(
+                              fit: BoxFit.scaleDown,
+                              alignment: Alignment.centerLeft,
                               child: Text(
                                 value.toString(),
+                                maxLines: 1,
                                 style: TextStyle(
                                   fontSize: 16,
                                   fontWeight: FontWeight.bold,

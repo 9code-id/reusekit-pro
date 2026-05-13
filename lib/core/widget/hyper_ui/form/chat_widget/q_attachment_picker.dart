@@ -43,7 +43,7 @@ class _QAttachmentPickerState extends State<QAttachmentPicker> {
             child: Text(
               widget.label!,
               style: TextStyle(
-                fontSize: 14,
+                fontSize: fsLg,
                 fontWeight: FontWeight.w600,
                 color: primaryColor,
               ),
@@ -88,7 +88,7 @@ class _QAttachmentPickerState extends State<QAttachmentPicker> {
                   widget.hint ?? "Tap to attach files",
                   style: TextStyle(
                     color: widget.enabled ? primaryColor : disabledBoldColor,
-                    fontSize: 14,
+                    fontSize: fsLg,
                     fontWeight: FontWeight.w600,
                   ),
                 ),
@@ -97,7 +97,7 @@ class _QAttachmentPickerState extends State<QAttachmentPicker> {
                     "${widget.value.length}/${widget.maxAttachments} files selected",
                     style: TextStyle(
                       color: disabledBoldColor,
-                      fontSize: 12,
+                      fontSize: fsMd,
                     ),
                   ),
               ],
@@ -111,7 +111,7 @@ class _QAttachmentPickerState extends State<QAttachmentPicker> {
             child: Text(
               widget.helper!,
               style: TextStyle(
-                fontSize: 12,
+                fontSize: fsMd,
                 color: disabledBoldColor,
               ),
             ),
@@ -138,8 +138,8 @@ class _QAttachmentPickerState extends State<QAttachmentPicker> {
         mainAxisSize: MainAxisSize.min,
         children: [
           Container(
-            width: 40,
-            height: 40,
+            width: icon2xl,
+            height: icon2xl,
             decoration: BoxDecoration(
               color: fileColor.withAlpha(30),
               borderRadius: BorderRadius.circular(radiusXs),
@@ -160,7 +160,7 @@ class _QAttachmentPickerState extends State<QAttachmentPicker> {
                 child: Text(
                   fileName,
                   style: TextStyle(
-                    fontSize: 12,
+                    fontSize: fsMd,
                     fontWeight: FontWeight.w600,
                   ),
                   maxLines: 1,
@@ -170,7 +170,7 @@ class _QAttachmentPickerState extends State<QAttachmentPicker> {
               Text(
                 fileExtension.toUpperCase(),
                 style: TextStyle(
-                  fontSize: 10,
+                  fontSize: fsXs,
                   color: disabledBoldColor,
                 ),
               ),
@@ -304,7 +304,7 @@ class _QAttachmentPickerState extends State<QAttachmentPicker> {
           children: [
             Center(
               child: Container(
-                width: 40,
+                width: icon2xl,
                 height: 4,
                 decoration: BoxDecoration(
                   color: disabledColor,
@@ -390,8 +390,8 @@ class _QAttachmentPickerState extends State<QAttachmentPicker> {
         child: Row(
           children: [
             Container(
-              width: 48,
-              height: 48,
+              width: icon3xl,
+              height: icon3xl,
               decoration: BoxDecoration(
                 color: color.withAlpha(30),
                 borderRadius: BorderRadius.circular(radiusSm),
@@ -399,7 +399,7 @@ class _QAttachmentPickerState extends State<QAttachmentPicker> {
               child: Icon(
                 icon,
                 color: color,
-                size: 24,
+                size: iconMd,
               ),
             ),
             SizedBox(width: spMd),
@@ -410,7 +410,7 @@ class _QAttachmentPickerState extends State<QAttachmentPicker> {
                   Text(
                     title,
                     style: TextStyle(
-                      fontSize: 16,
+                      fontSize: fsXl,
                       fontWeight: FontWeight.w600,
                     ),
                   ),
@@ -418,7 +418,7 @@ class _QAttachmentPickerState extends State<QAttachmentPicker> {
                   Text(
                     subtitle,
                     style: TextStyle(
-                      fontSize: 12,
+                      fontSize: fsMd,
                       color: disabledBoldColor,
                     ),
                   ),
@@ -428,7 +428,7 @@ class _QAttachmentPickerState extends State<QAttachmentPicker> {
             Icon(
               Icons.arrow_forward_ios,
               color: disabledBoldColor,
-              size: 16,
+              size: iconXs,
             ),
           ],
         ),

@@ -99,8 +99,8 @@ class _QTextFieldState extends State<QTextField> {
       }
     }
 
-    return Container(
-      height: textfieldMaxHeight,
+    return ConstrainedBox(
+      constraints: BoxConstraints(minHeight: textfieldMaxHeight),
       child: TextFormField(
         enabled: widget.enabled,
         controller: textEditingController,

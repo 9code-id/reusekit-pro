@@ -1,6 +1,6 @@
-// ignore_for_file: unnecessary_import
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:reusekit/core.dart';
 
 class ListItem extends StatelessWidget {
   const ListItem({
@@ -20,11 +20,8 @@ class ListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onLongPress: () {
-        // Clipboard.setData(ClipboardData(text: label));
-      },
+      onLongPress: () {},
       onTap: () {
-        // Clipboard.setData(ClipboardData(text: label));
         if (onTap != null) {
           onTap!();
         }
@@ -34,38 +31,32 @@ class ListItem extends StatelessWidget {
           if (prefixIcon != null) ...[
             Icon(
               prefixIcon,
-              size: 20,
+              size: iconSm,
               color: color,
             ),
-            const SizedBox(
-              width: 12,
-            ),
+            SizedBox(width: spMd),
           ],
           Expanded(
             child: Text(
               label,
               style: TextStyle(
-                fontSize: 14,
+                fontSize: fsLg,
                 color: color,
               ),
             ),
           ),
           if (suffixIcon != null) ...[
-            const SizedBox(
-              width: 8,
-            ),
+            SizedBox(width: spSm),
             Icon(
               suffixIcon,
-              size: 24,
+              size: iconMd,
             ),
           ],
           if (suffixIcon == null) ...[
-            const SizedBox(
-              width: 12,
-            ),
+            SizedBox(width: spMd),
             Icon(
               Icons.chevron_right,
-              size: 20,
+              size: iconSm,
               color: color,
             ),
           ],

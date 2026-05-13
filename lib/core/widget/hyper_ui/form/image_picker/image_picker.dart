@@ -131,28 +131,28 @@ class _QImagePickerState extends State<QImagePicker>
     showModalBottomSheet(
       context: context,
       backgroundColor: Colors.white,
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(radius3xl)),
       ),
       builder: (context) => SafeArea(
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             Container(
-              margin: const EdgeInsets.only(top: 10),
-              width: 40,
+              margin: EdgeInsets.only(top: spLg),
+              width: icon2xl,
               height: 4,
               decoration: BoxDecoration(
                 color: Colors.grey[300],
-                borderRadius: BorderRadius.circular(10),
+                borderRadius: BorderRadius.circular(radiusLg),
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(20.0),
+              padding: EdgeInsets.all(spXl),
               child: Text(
                 "Select Image Source",
                 style: TextStyle(
-                  fontSize: 18,
+                  fontSize: fs2xl,
                   fontWeight: FontWeight.bold,
                   color: primaryColor,
                 ),
@@ -184,7 +184,7 @@ class _QImagePickerState extends State<QImagePicker>
                 }
               },
             ),
-            SizedBox(height: 20),
+            SizedBox(height: spXl),
           ],
         ),
       ),
@@ -200,18 +200,18 @@ class _QImagePickerState extends State<QImagePicker>
     return InkWell(
       onTap: onTap,
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+        padding: EdgeInsets.symmetric(horizontal: spXl, vertical: spLg),
         child: Row(
           children: [
             Container(
-              padding: const EdgeInsets.all(12),
+              padding: EdgeInsets.all(spMd),
               decoration: BoxDecoration(
                 color: primaryColor.withValues(alpha: 0.1),
                 shape: BoxShape.circle,
               ),
               child: Icon(icon, color: primaryColor, size: 26),
             ),
-            const SizedBox(width: 16),
+            SizedBox(width: spLg),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -220,15 +220,15 @@ class _QImagePickerState extends State<QImagePicker>
                     title,
                     style: TextStyle(
                       fontWeight: FontWeight.w600,
-                      fontSize: 16,
+                      fontSize: fsXl,
                     ),
                   ),
-                  const SizedBox(height: 4),
+                  SizedBox(height: spXxs),
                   Text(
                     subtitle,
                     style: TextStyle(
                       color: Colors.grey[600],
-                      fontSize: 12,
+                      fontSize: fsMd,
                     ),
                   ),
                 ],
@@ -283,7 +283,7 @@ class _QImagePickerState extends State<QImagePicker>
               child: Text(
                 widget.label,
                 style: TextStyle(
-                  fontSize: 14,
+                  fontSize: fsLg,
                   fontWeight: FontWeight.w600,
                   color: textColor,
                 ),
@@ -291,7 +291,7 @@ class _QImagePickerState extends State<QImagePicker>
             ),
             if (imageUrl != null && !loading)
               Container(
-                padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                padding: EdgeInsets.symmetric(horizontal: spSm, vertical: spXxs),
                 decoration: BoxDecoration(
                   color: successColor.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(30),
@@ -305,13 +305,13 @@ class _QImagePickerState extends State<QImagePicker>
                     Icon(
                       Icons.check_circle,
                       color: successColor,
-                      size: 14,
+                      size: fsLg,
                     ),
-                    SizedBox(width: 4),
+                    SizedBox(width: spXxs),
                     Text(
                       "Uploaded",
                       style: TextStyle(
-                        fontSize: 12,
+                        fontSize: fsMd,
                         color: successColor,
                         fontWeight: FontWeight.w500,
                       ),
@@ -321,7 +321,7 @@ class _QImagePickerState extends State<QImagePicker>
               ),
           ],
         ),
-        SizedBox(height: 8),
+        SizedBox(height: spSm),
 
         // Image preview and upload container
         GestureDetector(
@@ -460,24 +460,24 @@ class _QImagePickerState extends State<QImagePicker>
                                 );
                               },
                             ),
-                            SizedBox(height: 20),
+                            SizedBox(height: spXl),
                             // Status text with progress percentage
                             Text(
                               uploadProgress > 0
                                   ? 'Uploading to cloud... ${(uploadProgress * 100).toStringAsFixed(0)}%'
                                   : 'Preparing upload...',
                               style: TextStyle(
-                                fontSize: 16,
+                                fontSize: fsXl,
                                 color: Colors.white,
                                 fontWeight: FontWeight.w500,
                               ),
                             ),
-                            SizedBox(height: 10),
+                            SizedBox(height: spLg),
                             // Small hint text
                             Text(
                               'Please wait while we process your image',
                               style: TextStyle(
-                                fontSize: 12,
+                                fontSize: fsMd,
                                 color: Colors.white.withValues(alpha: 0.7),
                               ),
                             ),
@@ -524,9 +524,9 @@ class _QImagePickerState extends State<QImagePicker>
                                         ? Icons.edit_outlined
                                         : Icons.add_photo_alternate_outlined,
                                     color: Colors.white,
-                                    size: 20,
+                                    size: spXl,
                                   ),
-                                  SizedBox(width: 8),
+                                  SizedBox(width: spSm),
                                   Text(
                                     imageUrl != null
                                         ? 'Change Image'
@@ -552,20 +552,20 @@ class _QImagePickerState extends State<QImagePicker>
         // Helper text
         if (widget.helper != null)
           Padding(
-            padding: const EdgeInsets.only(top: 8.0, left: 4.0),
+            padding: EdgeInsets.only(top: spSm, left: spXxs),
             child: Row(
               children: [
                 Icon(
                   Icons.info_outline,
-                  size: 14,
+                  size: fsLg,
                   color: Colors.grey[600],
                 ),
-                SizedBox(width: 4),
+                SizedBox(width: spXxs),
                 Expanded(
                   child: Text(
                     widget.helper!,
                     style: TextStyle(
-                      fontSize: 12,
+                      fontSize: fsMd,
                       color: Colors.grey[600],
                       fontStyle: FontStyle.italic,
                     ),
@@ -582,21 +582,21 @@ class _QImagePickerState extends State<QImagePicker>
           builder: (FormFieldState<String> field) {
             if (field.hasError) {
               return Padding(
-                padding: const EdgeInsets.only(top: 8.0, left: 4.0),
+                padding: EdgeInsets.only(top: spSm, left: spXxs),
                 child: Row(
                   children: [
                     Icon(
                       Icons.error_outline,
-                      size: 14,
+                      size: fsLg,
                       color: dangerColor,
                     ),
-                    SizedBox(width: 4),
+                    SizedBox(width: spXxs),
                     Expanded(
                       child: Text(
                         field.errorText!,
                         style: TextStyle(
                           color: dangerColor,
-                          fontSize: 12,
+                          fontSize: fsMd,
                         ),
                       ),
                     ),
@@ -618,7 +618,7 @@ class _QImagePickerState extends State<QImagePicker>
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-            padding: EdgeInsets.all(16),
+            padding: EdgeInsets.all(spLg),
             decoration: BoxDecoration(
               color: isError
                   ? dangerColor.withValues(alpha: 0.1)
@@ -627,13 +627,13 @@ class _QImagePickerState extends State<QImagePicker>
             ),
             child: Icon(
               isError ? Icons.broken_image : Icons.image_outlined,
-              size: 40,
+              size: icon2xl,
               color: isError ? dangerColor : Colors.grey[400],
             ),
           ),
-          SizedBox(height: 16),
+          SizedBox(height: spLg),
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 24, vertical: 8),
+            padding: EdgeInsets.symmetric(horizontal: sp2xl, vertical: spSm),
             decoration: BoxDecoration(
               color: isError
                   ? dangerColor.withValues(alpha: 0.05)
@@ -645,7 +645,7 @@ class _QImagePickerState extends State<QImagePicker>
                   ? 'Failed to load image'
                   : (widget.hint ?? 'Tap to select an image'),
               style: TextStyle(
-                fontSize: 14,
+                fontSize: fsLg,
                 fontWeight: FontWeight.w500,
                 color: isError ? dangerColor : Colors.grey[600],
               ),

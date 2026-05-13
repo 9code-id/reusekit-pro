@@ -103,8 +103,8 @@ class _QPriceFieldState extends State<QPriceField> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: textfieldMaxHeight,
+    return ConstrainedBox(
+      constraints: BoxConstraints(minHeight: textfieldMaxHeight),
       child: TextFormField(
         enabled: widget.enabled,
         controller: textEditingController,

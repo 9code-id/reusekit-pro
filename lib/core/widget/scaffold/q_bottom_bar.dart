@@ -35,7 +35,13 @@ class _QBottomBarState extends State<QBottomBar> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: widget.title != null ? Text(widget.title!) : null,
+        title: widget.title != null
+            ? Text(
+                widget.title!,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+              )
+            : null,
         actions: widget.actions,
       ),
       body: IndexedStack(

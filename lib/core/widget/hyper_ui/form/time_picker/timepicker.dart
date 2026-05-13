@@ -57,8 +57,8 @@ class _QTimePickerState extends State<QTimePicker> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: textfieldMaxHeight,
+    return ConstrainedBox(
+      constraints: BoxConstraints(minHeight: textfieldMaxHeight),
       child: InkWell(
         focusColor: Colors.transparent,
         hoverColor: Colors.transparent,
@@ -75,7 +75,6 @@ class _QTimePickerState extends State<QTimePicker> {
               );
             },
           );
-          print('pickedTime: $pickedTime');
           selectedValue = pickedTime;
           controller.text = getFormattedValue();
           setState(() {});
@@ -94,9 +93,6 @@ class _QTimePickerState extends State<QTimePicker> {
             readOnly: true,
             decoration: InputDecoration(
               labelText: widget.label,
-              labelStyle: const TextStyle(
-                color: Colors.blueGrey,
-              ),
               suffixIcon:
                   Icon(widget.icon), // Add suffix icon to InputDecoration
               helperText: widget.helper,

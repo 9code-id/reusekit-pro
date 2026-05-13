@@ -19,8 +19,8 @@ class QStatistic extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       child: Container(
-        width: MediaQuery.of(context).size.width,
-        padding: const EdgeInsets.all(12),
+        width: double.infinity,
+        padding: EdgeInsets.all(spMd),
         child: Row(
           children: [
             Expanded(
@@ -29,17 +29,21 @@ class QStatistic extends StatelessWidget {
                 children: [
                   Text(
                     label,
-                    style: const TextStyle(
-                      fontSize: 12,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                      fontSize: fsMd,
                     ),
                   ),
-                  const SizedBox(
-                    height: 6,
+                  SizedBox(
+                    height: spXs,
                   ),
                   Text(
                     '$value',
-                    style: const TextStyle(
-                      fontSize: 16,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                      fontSize: fsXl,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -47,18 +51,16 @@ class QStatistic extends StatelessWidget {
               ),
             ),
             Container(
-              padding: const EdgeInsets.all(6),
+              padding: EdgeInsets.all(spXs),
               decoration: BoxDecoration(
                 color: color ?? primaryColor,
-                borderRadius: const BorderRadius.all(
-                  Radius.circular(
-                    8,
-                  ),
+                borderRadius: BorderRadius.all(
+                  Radius.circular(radiusMd),
                 ),
               ),
               child: Icon(
                 icon,
-                size: 16,
+                size: iconXs,
                 color: Colors.white,
               ),
             ),

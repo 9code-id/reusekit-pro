@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:reusekit/core.dart';
 
 class QResponsiveView extends StatelessWidget {
   final List<Widget> children;
@@ -18,17 +19,17 @@ class QResponsiveView extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Container(
-        padding: padding ?? const EdgeInsets.all(20.0),
+        padding: padding ?? EdgeInsets.all(spXl),
         child: LayoutBuilder(
           builder: (context, constraints) {
             var crossAxisCount = 4;
             var screenWidth = constraints.maxWidth;
 
-            if (screenWidth < 650) {
+            if (screenWidth < bpMobile) {
               crossAxisCount = minimumCrossAxisCount;
-            } else if (screenWidth < 700) {
+            } else if (screenWidth < bpTablet) {
               crossAxisCount = 2;
-            } else if (screenWidth < 1200) {
+            } else if (screenWidth < bpDesktop) {
               crossAxisCount = 3;
             } else {
               crossAxisCount = 4;
@@ -36,8 +37,8 @@ class QResponsiveView extends StatelessWidget {
 
             return StaggeredGrid.count(
               crossAxisCount: crossAxisCount,
-              mainAxisSpacing: 20,
-              crossAxisSpacing: 20,
+              mainAxisSpacing: spXl,
+              crossAxisSpacing: spXl,
               children: List.generate(children.length, (index) {
                 var widget = children[index];
 
@@ -47,7 +48,8 @@ class QResponsiveView extends StatelessWidget {
                 }
 
                 return StaggeredGridTile.fit(
-                  crossAxisCellCount: customCrossAxisCount,
+                  crossAxisCellCount:
+                      customCrossAxisCount.clamp(1, crossAxisCount),
                   child: widget,
                 );
               }),

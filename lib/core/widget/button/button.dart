@@ -68,17 +68,22 @@ class QButton extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             spacing: spXs,
+            mainAxisSize: isFullWidth ? MainAxisSize.max : MainAxisSize.min,
             children: [
               Icon(
                 icon,
                 color: iconOrTextColor,
               ),
               if (label != null && label!.isNotEmpty)
-                Text(
-                  label!,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: getFormFontSize(size),
+                Flexible(
+                  child: Text(
+                    label!,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: getFormFontSize(size),
+                    ),
                   ),
                 ),
             ],
@@ -103,6 +108,8 @@ class QButton extends StatelessWidget {
         style: buttonStyle,
         child: Text(
           label!,
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
           textAlign: TextAlign.center,
           style: TextStyle(
             fontSize: getFormFontSize(size),
@@ -112,8 +119,8 @@ class QButton extends StatelessWidget {
     }
 
     return isFullWidth
-        ? Container(
-            width: MediaQuery.of(context).size.width,
+        ? SizedBox(
+            width: double.infinity,
             child: buttonChild,
           )
         : buttonChild;

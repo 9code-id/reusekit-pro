@@ -100,14 +100,14 @@ class QNavigationState extends State<QNavigation> {
   Widget build(BuildContext context) {
     instance = this;
 
-    bool isTabletOrDesktop = MediaQuery.of(context).size.width >= 600;
+    bool isTabletOrDesktop = MediaQuery.of(context).size.width >= bpMobile;
 
     if (isTabletOrDesktop) {
       return Scaffold(
         body: Row(
           children: [
             Container(
-              width: 240, // Adjust the width to fit the label and icon
+              width: 240,
               color: Colors.white,
               padding: EdgeInsets.symmetric(
                 horizontal: spMd,
@@ -130,22 +130,22 @@ class QNavigationState extends State<QNavigation> {
                           color: isSelected
                               ? Theme.of(context).primaryColor
                               : Colors.transparent,
-                          borderRadius: BorderRadius.circular(8),
+                          borderRadius: BorderRadius.circular(radiusMd),
                         ),
                         child: InkWell(
                           onTap: item.subItems.isNotEmpty
                               ? () => toggleExpand(index)
                               : () => updateIndex(index),
                           child: Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 8.0),
+                            padding: EdgeInsets.symmetric(vertical: spSm),
                             child: Row(
                               children: [
                                 Icon(
                                   item.icon,
-                                  size: 16, // Reduce the icon size
+                                  size: iconXs,
                                   color: isSelected ? Colors.white : null,
                                 ),
-                                const SizedBox(width: 8),
+                                SizedBox(width: spSm),
                                 Expanded(
                                   child: Text(
                                     item.label,
@@ -169,7 +169,7 @@ class QNavigationState extends State<QNavigation> {
                                         color: isSelected
                                             ? item.badgeColor
                                             : Colors.white,
-                                        fontSize: 10.0,
+                                        fontSize: fsXs,
                                       ),
                                     ),
                                   ),
@@ -183,7 +183,7 @@ class QNavigationState extends State<QNavigation> {
                                       color: isSelected
                                           ? Colors.white
                                           : (item.badgeColor ?? infoColor),
-                                      borderRadius: BorderRadius.circular(12),
+                                      borderRadius: BorderRadius.circular(radiusXl),
                                     ),
                                     child: Text(
                                       item.badgeLabel,
@@ -191,7 +191,7 @@ class QNavigationState extends State<QNavigation> {
                                         color: isSelected
                                             ? item.badgeColor
                                             : Colors.white,
-                                        fontSize: 10.0,
+                                        fontSize: fsXs,
                                       ),
                                     ),
                                   ),
@@ -221,7 +221,7 @@ class QNavigationState extends State<QNavigation> {
                               color: isSubSelected
                                   ? Theme.of(context).primaryColor
                                   : Colors.transparent,
-                              borderRadius: BorderRadius.circular(8),
+                              borderRadius: BorderRadius.circular(radiusMd),
                             ),
                             child: InkWell(
                               onTap: () => updateSubIndex(index, subIndex),
@@ -229,7 +229,7 @@ class QNavigationState extends State<QNavigation> {
                                 children: [
                                   Icon(
                                     Icons.circle_outlined,
-                                    size: 12, // Reduce the icon size
+                                    size: iconXxs,
                                     color: isSubSelected ? Colors.white : null,
                                   ),
                                   SizedBox(
@@ -322,7 +322,7 @@ class QNavigationState extends State<QNavigation> {
                                 child: FittedBox(
                                   child: Icon(
                                     item.icon,
-                                    size: 24.0,
+                                    size: iconMd,
                                   ),
                                 ),
                               ),
@@ -333,7 +333,7 @@ class QNavigationState extends State<QNavigation> {
                                 "${item.label}",
                                 overflow: TextOverflow.ellipsis,
                                 style: TextStyle(
-                                  fontSize: 14.0,
+                                  fontSize: fsLg,
                                   color: disabledBoldColor,
                                 ),
                               )

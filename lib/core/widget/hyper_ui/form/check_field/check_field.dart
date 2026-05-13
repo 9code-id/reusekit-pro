@@ -1,6 +1,6 @@
 //#TEMPLATE reuseable_check_field
 import 'package:flutter/material.dart';
-import 'package:reusekit/core/theme/theme_config.dart';
+import 'package:reusekit/core.dart';
 
 class QCheckField extends StatefulWidget {
   const QCheckField({
@@ -84,7 +84,8 @@ class _QCheckFieldState extends State<QCheckField> {
   Widget build(BuildContext context) {
     return FormField(
       initialValue: false,
-      validator: (value) => widget.validator!(items),
+      validator: (value) =>
+          widget.validator == null ? null : widget.validator!(items),
       builder: (FormFieldState<bool> field) {
         return InputDecorator(
           decoration: InputDecoration(
@@ -107,27 +108,53 @@ class _QCheckFieldState extends State<QCheckField> {
             ),
             itemBuilder: (context, index) {
               final item = items[index];
-              return CheckboxListTile(
-                contentPadding: const EdgeInsets.all(0),
-                title: Text(
-                  "${item["label"]}",
-                  style: TextStyle(
-                    color: textColor,
-                  ),
-                ),
-                value: item['checked'] ?? false,
-                onChanged: (val) {
+              return InkWell(
+                onTap: () {
                   uncheckAll();
-                  items[index]['checked'] = val;
+                  items[index]['checked'] = !(item['checked'] ?? false);
                   field.didChange(true);
                   setState(() {});
-    
+
                   final selectedValues =
                       items.where((i) => i['checked'] == true).toList();
-    
+
                   final ids = selectedValues.map((e) => e['value']).toList();
                   widget.onChanged(selectedValues, ids);
                 },
+                child: Row(
+                  children: [
+                    SizedBox(
+                      width: iconMd,
+                      height: iconMd,
+                      child: Checkbox(
+                        value: item['checked'] ?? false,
+                        onChanged: (val) {
+                          uncheckAll();
+                          items[index]['checked'] = val;
+                          field.didChange(true);
+                          setState(() {});
+
+                          final selectedValues =
+                              items.where((i) => i['checked'] == true).toList();
+
+                          final ids = selectedValues.map((e) => e['value']).toList();
+                          widget.onChanged(selectedValues, ids);
+                        },
+                      ),
+                    ),
+                    SizedBox(width: spSm),
+                    Expanded(
+                      child: Text(
+                        "${item["label"]}",
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                          color: textColor,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               );
             },
           ),

@@ -4,7 +4,7 @@ import 'package:reusekit/core.dart';
 
 class QNumberField extends StatefulWidget {
   const QNumberField({
-     this.label,
+    this.label,
     required this.onChanged,
     super.key,
     this.value,
@@ -44,8 +44,6 @@ class _QNumberFieldState extends State<QNumberField> {
   void initState() {
     super.initState();
     value = widget.value?.replaceAll(RegExp('[^0-9.]'), '');
-    print('value: $value');
-    print('value: ${widget.value}');
     controller = TextEditingController();
     controller.text = formattedValue?.toString() ?? '';
   }
@@ -61,8 +59,8 @@ class _QNumberFieldState extends State<QNumberField> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: textfieldMaxHeight,
+    return ConstrainedBox(
+      constraints: BoxConstraints(minHeight: textfieldMaxHeight),
       child: TextFormField(
         controller: controller,
         validator: widget.validator,
@@ -77,11 +75,9 @@ class _QNumberFieldState extends State<QNumberField> {
         ),
         onChanged: (newValue) {
           final newValue = controller.text;
-          print('newValue: $newValue');
 
           value = newValue.replaceAll(RegExp('[^0-9.]'), '');
 
-          print('value: $value');
           controller.text = formattedValue ?? '';
           controller.selection =
               TextSelection.collapsed(offset: controller.text.length);
@@ -91,11 +87,9 @@ class _QNumberFieldState extends State<QNumberField> {
         },
         onFieldSubmitted: (newValue) {
           final newValue = controller.text;
-          print('newValue: $newValue');
 
           value = newValue.replaceAll(RegExp('[^0-9.]'), '');
 
-          print('value: $value');
           controller.text = formattedValue ?? '';
           controller.selection =
               TextSelection.collapsed(offset: controller.text.length);

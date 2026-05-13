@@ -110,12 +110,12 @@ class _QAutoCompleteState extends State<QAutoComplete> {
                             },
                             child: const Icon(Icons.close),
                           ),
-                          const SizedBox(
-                            width: 8.0,
+                          SizedBox(
+                            width: spSm,
                           ),
                           const Icon(Icons.search),
-                          const SizedBox(
-                            width: 8.0,
+                          SizedBox(
+                            width: spSm,
                           ),
                         ],
                       ),
@@ -167,8 +167,8 @@ class _QAutoCompleteState extends State<QAutoComplete> {
                               decoration: BoxDecoration(
                                 color:
                                     Theme.of(context).scaffoldBackgroundColor,
-                                borderRadius: const BorderRadius.all(
-                                  Radius.circular(12),
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(radiusXl),
                                 ),
                                 border: Border.all(
                                   color: primaryColor,
@@ -203,45 +203,61 @@ class _QAutoCompleteState extends State<QAutoComplete> {
                                             : null,
                                         borderRadius: BorderRadius.only(
                                           topLeft: Radius.circular(
-                                            index == 0 ? 12 : 0,
+                                            index == 0 ? radiusXl : 0,
                                           ),
                                           topRight: Radius.circular(
-                                            index == 0 ? 12 : 0,
+                                            index == 0 ? radiusXl : 0,
                                           ),
                                           bottomLeft: Radius.circular(
                                             index == options.length - 1
-                                                ? 12
+                                                ? radiusXl
                                                 : 0.0,
                                           ),
                                           bottomRight: Radius.circular(
                                             index == options.length - 1
-                                                ? 12
+                                                ? radiusXl
                                                 : 0.0,
                                           ),
                                         ),
                                       ),
-                                      child: ListTile(
-                                        leading: option['photo'] == null
-                                            ? null
-                                            : CircleAvatar(
+                                      child: Padding(
+                                        padding: EdgeInsets.symmetric(
+                                          vertical: spSm,
+                                          horizontal: spSm,
+                                        ),
+                                        child: Row(
+                                          children: [
+                                            if (option['photo'] != null)
+                                              CircleAvatar(
                                                 backgroundImage: NetworkImage(
                                                   option['photo'],
                                                 ),
                                               ),
-                                        title: Text(
-                                          "${option["label"]}",
-                                          style: TextStyle(
-                                            color: textColor,
-                                          ),
-                                        ),
-                                        subtitle: option['info'] == null
-                                            ? null
-                                            : Text(
-                                                "${option["info"]}",
-                                                style: TextStyle(
-                                                  color: textColor,
-                                                ),
+                                            if (option['photo'] != null)
+                                              SizedBox(width: spSm),
+                                            Expanded(
+                                              child: Column(
+                                                crossAxisAlignment: CrossAxisAlignment.start,
+                                                children: [
+                                                  Text(
+                                                    "${option["label"]}",
+                                                    style: TextStyle(
+                                                      color: textColor,
+                                                    ),
+                                                  ),
+                                                  if (option['info'] != null)
+                                                    Text(
+                                                      "${option["info"]}",
+                                                      style: TextStyle(
+                                                        color: disabledBoldColor,
+                                                        fontSize: fsMd,
+                                                      ),
+                                                    ),
+                                                ],
                                               ),
+                                            ),
+                                          ],
+                                        ),
                                       ),
                                     ),
                                   );

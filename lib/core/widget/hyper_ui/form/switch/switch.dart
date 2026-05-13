@@ -38,8 +38,8 @@ class _QSwitchState extends State<QSwitch> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: textfieldMaxHeight * items.length,
+    return ConstrainedBox(
+      constraints: BoxConstraints(minHeight: textfieldMaxHeight * items.length),
       child: FormField(
         initialValue: false,
         validator: (value) =>
@@ -53,21 +53,22 @@ class _QSwitchState extends State<QSwitch> {
               labelText: widget.label,
               errorText: field.errorText,
               border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(8),
+                borderRadius: BorderRadius.circular(radiusMd),
                 borderSide: BorderSide(color: Colors.grey.shade300),
               ),
               enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(8),
+                borderRadius: BorderRadius.circular(radiusMd),
                 borderSide: BorderSide(color: Colors.grey.shade300),
               ),
               focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(8),
+                borderRadius: BorderRadius.circular(radiusMd),
                 borderSide: BorderSide(color: primaryColor),
               ),
               helperText: widget.helper,
               hintText: widget.hint,
             ),
             child: Column(
+              mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,
               spacing: spMd,
               children: items.map((item) {
@@ -85,19 +86,22 @@ class _QSwitchState extends State<QSwitch> {
                     final ids = selectedValues.map((e) => e['value']).toList();
                     widget.onChanged(selectedValues, ids);
                   },
-                  child: Container(
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(vertical: spXs),
                     child: Row(
                       children: [
                         Expanded(
                           child: Text(
                             "${item["label"]}",
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
                             style: TextStyle(
-                              fontSize: 14,
-                              color: Colors.black87,
+                              fontSize: fsLg,
+                              color: textColor,
                             ),
                           ),
                         ),
-                        Container(
+                        SizedBox(
                           height: 18.0,
                           child: Transform.scale(
                             scale: 0.7,
@@ -119,7 +123,7 @@ class _QSwitchState extends State<QSwitch> {
                                     .toList();
                                 widget.onChanged(selectedValues, ids);
                               },
-                              activeColor: primaryColor,
+                              activeThumbColor: primaryColor,
                               inactiveThumbColor: Colors.grey,
                               inactiveTrackColor: Colors.grey.shade300,
                             ),

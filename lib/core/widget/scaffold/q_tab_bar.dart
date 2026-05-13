@@ -56,8 +56,10 @@ class _QTabBarState extends State<QTabBar> with SingleTickerProviderStateMixin {
                     color: Theme.of(context).appBarTheme.backgroundColor,
                     child: TabBar(
                       controller: tabController,
+                      isScrollable: true,
+                      tabAlignment: TabAlignment.start,
                       tabs: widget.tabs!,
-                      unselectedLabelColor: Colors.grey[400]!,
+                      unselectedLabelColor: disabledColor,
                       labelColor: Colors.white,
                       indicatorColor: warningColor,
                       indicatorSize: TabBarIndicatorSize.tab,
@@ -78,15 +80,23 @@ class _QTabBarState extends State<QTabBar> with SingleTickerProviderStateMixin {
     }
     return Scaffold(
       appBar: AppBar(
-        title: widget.title != null ? Text(widget.title!) : null,
+        title: widget.title != null
+            ? Text(
+                widget.title!,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+              )
+            : null,
         actions: widget.actions,
         bottom: widget.tabs != null
             ? TabBar(
                 controller: tabController,
+                isScrollable: true,
+                tabAlignment: TabAlignment.start,
                 tabs: widget.tabs!,
-                unselectedLabelColor: Colors.grey[400]!,
+                unselectedLabelColor: disabledColor,
                 labelColor: Colors.white,
-                indicatorColor: warningColor, 
+                indicatorColor: warningColor,
                 indicatorSize: TabBarIndicatorSize.tab,
               )
             : null,

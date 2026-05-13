@@ -1,5 +1,6 @@
 //#TEMPLATE reuseable_memo_field
 import 'package:flutter/material.dart';
+import 'package:reusekit/core.dart';
 
 class QMemoField extends StatefulWidget {
   const QMemoField({
@@ -33,7 +34,6 @@ class _QMemoFieldState extends State<QMemoField> {
   @override
   void initState() {
     focusNode.addListener(() {
-      print('focusNodeListener');
       if (focusNode.hasFocus) {
         Future.delayed(const Duration(milliseconds: 300), () {
           WidgetsBinding.instance.addPostFrameCallback(
@@ -68,9 +68,9 @@ class _QMemoFieldState extends State<QMemoField> {
       maxLength: widget.maxLength,
       maxLines: widget.maxLines ?? 6,
       decoration: InputDecoration(
-        contentPadding: const EdgeInsets.symmetric(
-          horizontal: 20,
-          vertical: 24,
+        contentPadding: EdgeInsets.symmetric(
+          horizontal: spXl,
+          vertical: sp2xl,
         ),
         labelText: widget.label,
         suffixIcon: const Icon(

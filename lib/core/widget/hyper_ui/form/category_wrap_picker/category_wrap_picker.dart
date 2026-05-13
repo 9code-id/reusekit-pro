@@ -82,88 +82,100 @@ class _QCategoryWrapPickerState extends State<QCategoryWrapPicker> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: MediaQuery.of(context).size.width,
+    return SizedBox(
+      width: double.infinity,
       child: FormField(
         initialValue: false,
-        validator: (value) =>
-            widget.validator!(selectedIndex == -1 ? null : selectedIndex),
+        validator: (value) => widget.validator == null
+            ? null
+            : widget.validator!(selectedIndex == -1 ? null : selectedIndex),
         builder: (FormFieldState<bool> field) {
-          return InputDecorator(
-            decoration: InputDecoration(
-              contentPadding: const EdgeInsets.all(0.0),
-              labelText: widget.label,
-              errorText: field.errorText,
-              border: InputBorder.none,
-              focusedBorder: InputBorder.none,
-              filled: false,
-              fillColor: Colors.transparent,
-              enabledBorder: InputBorder.none,
-              errorBorder: InputBorder.none,
-              helperText: widget.helper,
-              hintText: widget.hint,
-            ),
-            child: Wrap(
-              runSpacing: 8,
-              spacing: 8,
-              children: List.generate(items.length, (index) {
-                final selected = selectedIndex == index;
-                final item = items[index];
+          return LayoutBuilder(
+            builder: (context, constraints) {
+              return InputDecorator(
+                decoration: InputDecoration(
+                  contentPadding: const EdgeInsets.all(0.0),
+                  labelText: widget.label,
+                  errorText: field.errorText,
+                  border: InputBorder.none,
+                  focusedBorder: InputBorder.none,
+                  filled: false,
+                  fillColor: Colors.transparent,
+                  enabledBorder: InputBorder.none,
+                  errorBorder: InputBorder.none,
+                  helperText: widget.helper,
+                  hintText: widget.hint,
+                ),
+                child: Wrap(
+                  runSpacing: 8,
+                  spacing: 8,
+                  children: List.generate(items.length, (index) {
+                    final selected = selectedIndex == index;
+                    final item = items[index];
 
-                if (widget.itemBuilder != null) {
-                  return widget.itemBuilder!(item, selected, () {
-                    updateIndex(index);
-                  });
-                }
+                    if (widget.itemBuilder != null) {
+                      return widget.itemBuilder!(item, selected, () {
+                        updateIndex(index);
+                      });
+                    }
 
-                final count = item['count'] ?? 0;
+                    final count = item['count'] ?? 0;
 
-                return SizedBox(
-                  height: 32,
-                  child: InkWell(
-                    onTap: () => updateIndex(index),
-                    child: Container(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 8,
-                        vertical: 8,
+                    return ConstrainedBox(
+                      constraints: BoxConstraints(
+                        minHeight: 32,
+                        maxWidth: constraints.maxWidth,
                       ),
-                      decoration: BoxDecoration(
-                        color: selected ? primaryColor : disabledColor,
-                        borderRadius: const BorderRadius.all(
-                          Radius.circular(12),
-                        ),
-                      ),
-                      child: Wrap(
-                        children: [
-                          Text(
-                            item['label'],
-                            style: TextStyle(
-                              fontSize: 12,
-                              color: selected ? Colors.white : null,
+                      child: InkWell(
+                        onTap: () => updateIndex(index),
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 8,
+                            vertical: 8,
+                          ),
+                          decoration: BoxDecoration(
+                            color: selected ? primaryColor : disabledColor,
+                            borderRadius: const BorderRadius.all(
+                              Radius.circular(12),
                             ),
                           ),
-                          const SizedBox(
-                            width: 4,
-                          ),
-                          if (count > 0)
-                            CircleAvatar(
-                              radius: 6,
-                              backgroundColor: Colors.red,
-                              child: Text(
-                                '$count',
-                                style: const TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 8,
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Flexible(
+                                child: Text(
+                                  '${item['label']}',
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                    color: selected ? Colors.white : null,
+                                  ),
                                 ),
                               ),
-                            ),
-                        ],
+                              if (count > 0) ...[
+                                const SizedBox(width: 4),
+                                CircleAvatar(
+                                  radius: 6,
+                                  backgroundColor: Colors.red,
+                                  child: Text(
+                                    '$count',
+                                    style: const TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 8,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ],
+                          ),
+                        ),
                       ),
-                    ),
-                  ),
-                );
-              }),
-            ),
+                    );
+                  }),
+                ),
+              );
+            },
           );
         },
       ),

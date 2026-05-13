@@ -31,11 +31,35 @@ class QCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final body = Container(
+      width: double.infinity,
+      padding: padding ?? EdgeInsets.all(spMd),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.only(
+          bottomLeft: Radius.circular(radiusXl),
+          bottomRight: Radius.circular(radiusXl),
+        ),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        spacing: spacing ?? spSm,
+        children: [
+          if (children.isNotEmpty) ...children,
+          if (footers.isNotEmpty)
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: footers,
+            ),
+        ],
+      ),
+    );
+
     var child = Container(
       clipBehavior: Clip.antiAlias,
       decoration: BoxDecoration(
-        borderRadius: const BorderRadius.all(
-          Radius.circular(12),
+        borderRadius: BorderRadius.all(
+          Radius.circular(radiusXl),
         ),
         border: Border.all(
           width: 0.2,
@@ -71,60 +95,41 @@ class QCard extends StatelessWidget {
                       children: [
                         Text(
                           '$title',
-                          style: const TextStyle(
-                            fontSize: 16,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                            fontSize: fsXl,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
                         if (subtitle != null)
                           Text(
                             '$subtitle',
-                            style: const TextStyle(
-                              fontSize: 12,
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(
+                              fontSize: fsMd,
                             ),
                           ),
                       ],
                     ),
                   ),
                   if (actions.isNotEmpty)
-                    Container(
+                    SizedBox(
                       height: 32,
-                      child: Row(
-                        children: actions,
+                      child: SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: actions,
+                        ),
                       ),
                     ),
                 ],
               ),
             ),
           ],
-          //Footers Codes
-          Expanded(
-            flex: flex,
-            child: Container(
-              width: MediaQuery.of(context).size.width,
-              padding: padding ?? EdgeInsets.all(spMd),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(12),
-                  bottomRight: Radius.circular(12),
-                ),
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                spacing: spacing ?? spSm,
-                children: [
-                  if (children.isNotEmpty) ...children,
-                  if (footers.isNotEmpty) ...[
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: footers,
-                    ),
-                  ],
-                ],
-              ),
-            ),
-          ),
+          if (flex > 0) Expanded(flex: flex, child: body) else body,
         ],
       ),
     );

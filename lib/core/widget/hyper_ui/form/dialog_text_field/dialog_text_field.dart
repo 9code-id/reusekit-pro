@@ -62,21 +62,19 @@ class _QDialogTextFieldState extends State<QDialogTextField> {
         );
       },
       child: Container(
-        padding: const EdgeInsets.all(8.0),
+        padding: EdgeInsets.all(spSm),
         child: Row(
           children: [
-            const Icon(
+            Icon(
               Icons.edit_document,
-              size: 16.0,
+              size: iconXs,
             ),
-            const SizedBox(
-              width: 4.0,
-            ),
+            SizedBox(width: spXxs),
             Expanded(
               child: Text(
                 value.isEmpty ? widget.label : value,
-                style: const TextStyle(
-                  fontSize: 10.0,
+                style: TextStyle(
+                  fontSize: fsXs,
                 ),
               ),
             ),

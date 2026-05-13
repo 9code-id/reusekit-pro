@@ -45,40 +45,46 @@ class _QtyFieldState extends State<QtyField> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: textfieldMaxHeight,
-      padding: const EdgeInsets.symmetric(
-        horizontal: 8.0,
-        vertical: 4.0,
-      ),
-      decoration: BoxDecoration(
-        color: Colors.grey[100],
-        borderRadius: BorderRadius.circular(12),
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          InkWell(
-            onTap: _decrement,
-            child: Icon(Icons.remove, size: 20),
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: 8.0,
+    return ConstrainedBox(
+      constraints: BoxConstraints(minHeight: textfieldMaxHeight),
+      child: Container(
+        padding: EdgeInsets.symmetric(
+          horizontal: spSm,
+          vertical: spXxs,
+        ),
+        decoration: BoxDecoration(
+          color: Colors.grey[100],
+          borderRadius: BorderRadius.circular(radiusXl),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            InkWell(
+              onTap: _decrement,
+              child: Icon(Icons.remove, size: iconSm),
             ),
-            child: Text(
-              '$_currentValue',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
+            Flexible(
+              child: Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: spSm,
+                ),
+                child: Text(
+                  '$_currentValue',
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                    fontSize: fs3xl,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
               ),
             ),
-          ),
-          InkWell(
-            onTap: _increment,
-            child: Icon(Icons.add, size: 20),
-          ),
-        ],
+            InkWell(
+              onTap: _increment,
+              child: Icon(Icons.add, size: iconSm),
+            ),
+          ],
+        ),
       ),
     );
   }

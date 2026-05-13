@@ -34,8 +34,8 @@ class ListItem2 extends StatelessWidget {
       child: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(
-              vertical: 10,
+            padding: EdgeInsets.symmetric(
+              vertical: spSm,
             ),
             child: Row(
               children: [
@@ -44,7 +44,7 @@ class ListItem2 extends StatelessWidget {
                     label,
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(
-                      fontSize: 12,
+                      fontSize: fsMd,
                       color: color,
                     ),
                   ),
@@ -54,7 +54,7 @@ class ListItem2 extends StatelessWidget {
                     '$value',
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(
-                      fontSize: 12,
+                      fontSize: fsMd,
                       fontWeight: FontWeight.bold,
                       color: color,
                     ),

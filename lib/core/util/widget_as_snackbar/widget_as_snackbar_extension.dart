@@ -7,14 +7,18 @@ extension WidgetAsSnackbarWidgetExtension on Widget {
       elevation: 0.0,
       actionOverflowThreshold: 0.0,
       behavior: SnackBarBehavior.fixed,
-      content: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Container(
-            constraints: BoxConstraints(maxWidth: 400),
-            child: this,
-          )
-        ],
+      content: LayoutBuilder(
+        builder: (context, constraints) {
+          return Center(
+            child: ConstrainedBox(
+              constraints: BoxConstraints(
+                maxWidth:
+                    constraints.maxWidth < 400 ? constraints.maxWidth : 400,
+              ),
+              child: this,
+            ),
+          );
+        },
       ),
     );
     ScaffoldMessenger.of(context).hideCurrentSnackBar();

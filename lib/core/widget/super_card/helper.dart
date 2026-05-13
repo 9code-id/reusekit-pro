@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:reusekit/core.dart';
 
 class PosFavorite extends StatefulWidget {
   final double? left;
@@ -75,10 +76,10 @@ class _PosFavoriteState extends State<PosFavorite> {
           //   onPressed: _toggleFavorite,
           // ),
           child: Container(
-            padding: const EdgeInsets.all(8.0),
+            padding: EdgeInsets.all(spSm),
             child: Icon(
               widget.icon,
-              size: 14.0,
+              size: fsLg,
             ),
           ),
         ),
@@ -114,18 +115,20 @@ class PosBadge extends StatelessWidget {
       bottom: bottom,
       child: Container(
         padding: EdgeInsets.symmetric(
-          horizontal: 8,
-          vertical: 4,
+          horizontal: spSm,
+          vertical: spXxs,
         ),
         decoration: BoxDecoration(
           color: color ?? Colors.blue,
-          borderRadius: BorderRadius.circular(8.0),
+          borderRadius: BorderRadius.circular(radiusMd),
         ),
         child: Text(
           '$label',
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
           style: TextStyle(
             color: Colors.white,
-            fontSize: 10.0,
+            fontSize: fsXs,
           ),
         ),
       ),
@@ -151,30 +154,32 @@ class PricingText extends StatelessWidget {
       children: [
         Text(
           '\$${discountedPrice.toStringAsFixed(2)}',
-          style: const TextStyle(
-            fontSize: 14,
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
+          style: TextStyle(
+            fontSize: fsLg,
             fontWeight: FontWeight.bold,
           ),
         ),
-        const SizedBox(
-          width: 4.0,
+        SizedBox(
+          width: spXxs,
         ),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               '${discountPercentage.toStringAsFixed(0)}% off',
-              style: const TextStyle(
+              style: TextStyle(
                 color: Colors.red,
-                fontSize: 8.0,
+                fontSize: fsXxs,
               ),
             ),
             Text(
               '\$${price.toStringAsFixed(2)}',
-              style: const TextStyle(
+              style: TextStyle(
                 decoration: TextDecoration.lineThrough,
                 color: Colors.grey,
-                fontSize: 12.0,
+                fontSize: fsMd,
               ),
             ),
           ],
@@ -197,9 +202,11 @@ class CategoryText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
+      maxLines: 1,
+      overflow: TextOverflow.ellipsis,
       style: TextStyle(
         color: color,
-        fontSize: 12.0,
+        fontSize: fsMd,
       ),
     );
   }
@@ -218,8 +225,10 @@ class TitleText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
+      maxLines: 1,
+      overflow: TextOverflow.ellipsis,
       style: TextStyle(
-        fontSize: 14,
+        fontSize: fsLg,
         fontWeight: FontWeight.bold,
         color: color,
       ),
@@ -246,14 +255,16 @@ class IconLabel extends StatelessWidget {
         Icon(
           icon,
           color: color,
-          size: 16.0,
+          size: iconXs,
         ),
-        SizedBox(width: 4),
+        SizedBox(width: spXxs),
         Text(
           label,
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
           style: TextStyle(
             color: color,
-            fontSize: 12.0,
+            fontSize: fsMd,
           ),
         ),
       ],
@@ -271,6 +282,10 @@ class DescriptionText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(text);
+    return Text(
+      text,
+      maxLines: 2,
+      overflow: TextOverflow.ellipsis,
+    );
   }
 }

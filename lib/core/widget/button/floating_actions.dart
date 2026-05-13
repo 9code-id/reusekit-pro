@@ -12,10 +12,13 @@ class FloatingActions extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(spMd),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.end,
-        spacing: spSm,
-        children: children,
+      child: SingleChildScrollView(
+        reverse: true,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
+          spacing: spSm,
+          children: children,
+        ),
       ),
     );
   }

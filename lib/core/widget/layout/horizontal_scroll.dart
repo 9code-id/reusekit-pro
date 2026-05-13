@@ -16,8 +16,8 @@ class QHorizontalScroll extends StatefulWidget {
 class _QHorizontalScrollState extends State<QHorizontalScroll> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: MediaQuery.of(context).size.width,
+    return SizedBox(
+      width: double.infinity,
       child: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
         padding: widget.padding ?? EdgeInsets.zero,

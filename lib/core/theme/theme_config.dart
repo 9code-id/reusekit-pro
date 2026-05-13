@@ -161,8 +161,8 @@ final iconSm = 20.0;
 final iconMd = 24.0;
 final iconLg = 28.0;
 final iconXl = 32.0;
-final icon2xl = 48.0;
-final icon3xl = 46.0;
+final icon2xl = 40.0;
+final icon3xl = 48.0;
 final icon4xl = 64.0;
 
 //base size form input values like textfield, dropdown, etc
@@ -175,6 +175,44 @@ final formFsXl = 18.0;
 final formFs2xl = 20.0;
 final formFs3xl = 22.0;
 final formFs4xl = 24.0;
+
+// Opacity constants
+final opacityDisabled = 0.38;
+final opacityHint = 0.5;
+final opacityLight = 0.7;
+final opacityFull = 1.0;
+final opacityOverlay = 0.6;
+final opacitySplash = 0.12;
+
+// Animation/Duration constants
+final durationFast = Duration(milliseconds: 150);
+final durationNormal = Duration(milliseconds: 300);
+final durationSlow = Duration(milliseconds: 500);
+final durationSheet = Duration(milliseconds: 400);
+final curveDefault = Curves.easeInOut;
+final curveEnter = Curves.easeOut;
+final curveExit = Curves.easeIn;
+final curveBounce = Curves.elasticOut;
+
+// Responsive breakpoints
+final bpMobile = 600.0;
+final bpTablet = 900.0;
+final bpDesktop = 1200.0;
+final bpWide = 1536.0;
+
+// TextStyle presets
+final tsH1 = TextStyle(fontSize: fsH1, fontWeight: FontWeight.bold, color: textColor);
+final tsH2 = TextStyle(fontSize: fsH2, fontWeight: FontWeight.bold, color: textColor);
+final tsH3 = TextStyle(fontSize: fsH3, fontWeight: FontWeight.w600, color: textColor);
+final tsH4 = TextStyle(fontSize: fsH4, fontWeight: FontWeight.w600, color: textColor);
+final tsH5 = TextStyle(fontSize: fsH5, fontWeight: FontWeight.w600, color: textColor);
+final tsH6 = TextStyle(fontSize: fsH6, fontWeight: FontWeight.w600, color: textColor);
+final tsBody = TextStyle(fontSize: fsLg, color: textColor);
+final tsBodySm = TextStyle(fontSize: fsMd, color: textColor);
+final tsCaption = TextStyle(fontSize: fsSm, color: disabledBoldColor);
+final tsLabel = TextStyle(fontSize: fsMd, fontWeight: FontWeight.w500, color: textColor);
+final tsButton = TextStyle(fontSize: fsLg, fontWeight: FontWeight.w600, color: Colors.white);
+final tsLink = TextStyle(fontSize: fsLg, fontWeight: FontWeight.w500, color: primaryColor, decoration: TextDecoration.underline);
 
 // Styling for buttons
 //bs is ButtonSize

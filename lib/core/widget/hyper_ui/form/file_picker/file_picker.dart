@@ -122,7 +122,8 @@ class _QFilePickerState extends State<QFilePicker> {
           children: [
             FormField(
               initialValue: false,
-              validator: (value) => widget.validator!(fileUrl),
+              validator: (value) =>
+                  widget.validator == null ? null : widget.validator!(fileUrl),
               builder: (FormFieldState<bool> field) {
                 return TextFormField(
                   controller: controller,

@@ -61,6 +61,7 @@ class _QDropdownFieldState extends State<QDropdownField> {
   }
 
   Map<String, dynamic>? get currentValue {
+    if (items.isEmpty) return null;
     if (widget.emptyMode) {
       final foundItems =
           items.where((i) => i['value'] == selectedValue?['value']).toList();
@@ -73,13 +74,13 @@ class _QDropdownFieldState extends State<QDropdownField> {
         'value': '-',
       };
     }
-    return items.first;
+    return selectedValue ?? items.first;
   }
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: textfieldMaxHeight,
+    return ConstrainedBox(
+      constraints: BoxConstraints(minHeight: textfieldMaxHeight),
       child: FormField(
         initialValue: false,
         validator: (value) {
@@ -147,7 +148,9 @@ class _QDropdownFieldState extends State<QDropdownField> {
                           child: Padding(
                             padding: const EdgeInsets.symmetric(),
                             child: Text(
-                              item['label'],
+                              '${item['label']}',
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
                             ),
                           ),
                         );

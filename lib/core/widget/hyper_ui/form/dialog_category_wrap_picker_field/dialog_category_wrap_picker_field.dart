@@ -64,26 +64,24 @@ class _QDialogCategoryWrapPickerFieldState
         setState(() {});
       },
       child: Container(
-        padding: const EdgeInsets.all(8.0),
+        padding: EdgeInsets.all(spSm),
         child: widget.iconMode == true
-            ? const Icon(
+            ? Icon(
                 Icons.more_horiz,
-                size: 16.0,
+                size: iconXs,
               )
             : Row(
                 children: [
-                  const Icon(
+                  Icon(
                     Icons.arrow_drop_down,
-                    size: 16.0,
+                    size: iconXs,
                   ),
-                  const SizedBox(
-                    width: 4.0,
-                  ),
+                  SizedBox(width: spXxs),
                   Expanded(
                     child: Text(
                       selectedValue ?? widget.label,
-                      style: const TextStyle(
-                        fontSize: 10.0,
+                      style: TextStyle(
+                        fontSize: fsXs,
                       ),
                     ),
                   ),

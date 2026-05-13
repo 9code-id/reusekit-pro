@@ -84,53 +84,67 @@ class _QTagPickerState extends State<QTagPicker> {
   Widget build(BuildContext context) {
     return FormField(
       initialValue: false,
-      validator: (value) =>
-          widget.validator!(selectedIndex == -1 ? null : selectedIndex),
+      validator: (value) => widget.validator == null
+          ? null
+          : widget.validator!(selectedIndex == -1 ? null : selectedIndex),
       builder: (FormFieldState<bool> field) {
-        return SizedBox(
-          width: MediaQuery.of(context).size.width,
-          child: Wrap(
-            alignment: WrapAlignment.start,
-            runAlignment: WrapAlignment.start,
-            spacing: 8,
-            runSpacing: 8,
-            children: List.generate(items.length, (index) {
-              final selected = selectedIndex == index;
-              final item = items[index];
+        return LayoutBuilder(
+          builder: (context, constraints) {
+            return SizedBox(
+              width: double.infinity,
+              child: Wrap(
+                alignment: WrapAlignment.start,
+                runAlignment: WrapAlignment.start,
+                spacing: 8,
+                runSpacing: 8,
+                children: List.generate(items.length, (index) {
+                  final selected = selectedIndex == index;
+                  final item = items[index];
 
-              if (widget.itemBuilder != null) {
-                return widget.itemBuilder!(item, selected, () {
-                  updateIndex(index);
-                });
-              }
+                  if (widget.itemBuilder != null) {
+                    return widget.itemBuilder!(item, selected, () {
+                      updateIndex(index);
+                    });
+                  }
 
-              return ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: selected ? primaryColor : disabledColor,
-                  foregroundColor: selected ? Colors.white : textColor,
-                  elevation: 0,
-                ),
-                onPressed: () => updateIndex(index),
-                child: Wrap(
-                  children: [
-                    Icon(
-                      item['icon'],
-                      size: 20,
-                    ),
-                    const SizedBox(
-                      width: 6,
-                    ),
-                    Text(
-                      item['label'],
-                      style: const TextStyle(
-                        fontSize: 12.0,
+                  return ConstrainedBox(
+                    constraints: BoxConstraints(maxWidth: constraints.maxWidth),
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor:
+                            selected ? primaryColor : disabledColor,
+                        foregroundColor: selected ? Colors.white : textColor,
+                        elevation: 0,
+                      ),
+                      onPressed: () => updateIndex(index),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          if (item['icon'] != null) ...[
+                            Icon(
+                              item['icon'],
+                              size: 20,
+                            ),
+                            const SizedBox(width: 6),
+                          ],
+                          Flexible(
+                            child: Text(
+                              '${item['label']}',
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                              style: const TextStyle(
+                                fontSize: 12.0,
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
-                  ],
-                ),
-              );
-            }),
-          ),
+                  );
+                }),
+              ),
+            );
+          },
         );
       },
     );
