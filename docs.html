@@ -1,0 +1,1510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReuseKit Flutter Framework - Documentation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8fafc;
+            margin: 0;
+            padding: 0;
+        }
+
+        .layout {
+            display: flex;
+            min-height: 100vh;
+        }        .sidebar {
+            width: 280px;
+            background-color: white;
+            color: #333;
+            padding: 2em 0;
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+            box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+            border-right: 1px solid #e2e8f0;
+        }
+
+        .sidebar .logo {
+            display: block;
+            max-width: 200px;
+            height: auto;
+            margin: 0 auto 2em auto;
+            padding: 0 1em;
+        }
+
+        .sidebar h3 {
+            color: #475569;
+            font-size: 1.1em;
+            margin: 0 0 1em 0;
+            padding: 0 1.5em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .sidebar li {
+            margin: 0;
+        }
+
+        .sidebar a {
+            display: block;
+            color: #64748b;
+            text-decoration: none;
+            padding: 0.8em 1.5em;
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+        }
+
+        .sidebar a:hover {
+            background-color: #f1f5f9;
+            color: #6366f1;
+            border-left-color: #6366f1;
+        }
+
+        .sidebar a.active {
+            background-color: #f1f5f9;
+            color: #6366f1;
+            border-left-color: #6366f1;
+        }
+
+        .main-content {
+            flex: 1;
+            margin-left: 280px;
+            padding: 2em;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 2em;
+        }        h1 {
+            color: #6366f1;
+            font-size: 2.5em;
+            margin-bottom: 0.5em;
+            text-align: center;
+            border-bottom: 3px solid #6366f1;
+            padding-bottom: 0.5em;
+        }
+
+        h2 {
+            color: #4338ca;
+            font-size: 1.8em;
+            margin-top: 2em;
+            margin-bottom: 1em;
+            padding-left: 0.5em;
+            border-left: 4px solid #6366f1;
+        }
+
+        h3 {
+            color: #5b21b6;
+            font-size: 1.4em;
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+        }
+
+        h4 {
+            color: #7c3aed;
+            font-size: 1.2em;
+            margin-top: 1em;
+            margin-bottom: 0.6em;
+        }
+
+        p {
+            margin-bottom: 1em;
+        }
+
+        ul, ol {
+            margin-left: 2em;
+            margin-bottom: 1em;
+        }
+
+        li {
+            margin-bottom: 0.3em;
+        }
+
+        .emoji {
+            font-size: 1.2em;
+            margin-right: 0.3em;
+        }
+
+        .table-of-contents {
+            background-color: #f1f5f9;
+            padding: 1.5em;
+            border-radius: 8px;
+            margin-bottom: 2em;
+            border: 1px solid #e2e8f0;
+        }
+
+        .table-of-contents h2 {
+            margin-top: 0;
+            color: #475569;
+            border: none;
+            padding: 0;
+        }
+
+        .table-of-contents ul {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .table-of-contents li {
+            margin-bottom: 0.5em;
+        }
+
+        .table-of-contents a {
+            color: #6366f1;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .table-of-contents a:hover {
+            text-decoration: underline;
+        }
+
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5em;
+            margin: 2em 0;
+        }        .feature-card {
+            background-color: #f8fafc;
+            padding: 1.5em;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            border-left: 4px solid #6366f1;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(99, 102, 241, 0.03), rgba(67, 56, 202, 0.03));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+
+        .feature-card:hover {
+            background-color: #f1f5f9;
+            border-left-width: 6px;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.15);
+            text-decoration: none;
+        }
+
+        .feature-card h4 {
+            color: #6366f1;
+            margin-top: 0;
+            transition: color 0.3s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .feature-card p {
+            position: relative;
+            z-index: 1;
+            margin: 0;
+        }
+
+        .feature-card:hover h4 {
+            color: #4338ca;
+        }
+
+        pre {
+            background-color: #1e293b;
+            color: #e2e8f0;
+            padding: 1.5em;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1em 0;
+            font-family: 'Fira Code', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+            line-height: 1.4;
+        }
+
+        code {
+            background-color: #f1f5f9;
+            color: #6366f1;
+            padding: 0.2em 0.4em;
+            border-radius: 4px;
+            font-family: 'Fira Code', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+
+        pre code {
+            background-color: transparent;
+            color: inherit;
+            padding: 0;
+        }
+
+        .color-palette {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1em;
+            margin: 1em 0;
+        }
+
+        .color-item {
+            background-color: #f8fafc;
+            padding: 1em;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .color-sample {
+            width: 100%;
+            height: 40px;
+            border-radius: 4px;
+            margin-bottom: 0.5em;
+            border: 1px solid #e2e8f0;
+        }
+
+        .primary { background-color: #6366f1; }
+        .secondary { background-color: #e5e7eb; }
+        .success { background-color: #10b981; }
+        .danger { background-color: #ef4444; }
+        .info { background-color: #3b82f6; }
+        .warning { background-color: #f59e0b; }
+
+        .warning-box {
+            background-color: #fef3c7;
+            border: 1px solid #f59e0b;
+            border-radius: 8px;
+            padding: 1em;
+            margin: 1em 0;
+        }
+
+        .warning-box h4 {
+            color: #d97706;
+            margin-top: 0;
+        }
+
+        .success-box {
+            background-color: #d1fae5;
+            border: 1px solid #10b981;
+            border-radius: 8px;
+            padding: 1em;
+            margin: 1em 0;
+        }
+
+        .success-box h4 {
+            color: #047857;
+            margin-top: 0;
+        }
+
+        .error-box {
+            background-color: #fee2e2;
+            border: 1px solid #ef4444;
+            border-radius: 8px;
+            padding: 1em;
+            margin: 1em 0;
+        }
+
+        .error-box h4 {
+            color: #dc2626;
+            margin-top: 0;
+        }
+
+        .properties-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1em 0;
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .properties-table th,
+        .properties-table td {
+            padding: 0.75em;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .properties-table th {
+            background-color: #f8fafc;
+            font-weight: 600;
+            color: #475569;
+        }
+
+        .project-structure {
+            background-color: #1e293b;
+            color: #e2e8f0;
+            padding: 1.5em;
+            border-radius: 8px;
+            font-family: 'Fira Code', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+            margin: 1em 0;
+            white-space: pre-line;
+        }        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #6366f1;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s;
+        }
+
+        .back-to-top:hover {
+            background-color: #4338ca;
+        }        /* Responsive Design */
+        .mobile-nav-toggle {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+            }
+
+            .sidebar.open {
+                transform: translateX(0);
+            }
+
+            .main-content {
+                margin-left: 0;
+            }
+
+            .mobile-nav-toggle {
+                display: block;
+                position: fixed;
+                top: 1em;
+                left: 1em;
+                z-index: 1001;
+                background-color: #6366f1;
+                color: white;
+                border: none;
+                padding: 0.8em;
+                border-radius: 8px;
+                cursor: pointer;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            .container {
+                margin: 10px;
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            .navigation ul {
+                flex-direction: column;
+            }
+
+            .overview-grid {
+                grid-template-columns: 1fr;
+            }            .color-palette {
+                grid-template-columns: 1fr;
+            }
+
+            .logo {
+                max-width: 200px;
+            }
+
+            .preview-gallery {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1em;
+            }
+
+            .preview-item {
+                max-width: 200px;
+            }
+        }
+
+        /* Logo and Preview Styles */
+        .logo {
+            display: block;
+            margin: 0 auto 1em auto;
+            max-width: 300px;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .preview-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5em;
+            margin: 2em 0;
+            padding: 1.5em;
+            background-color: #f8fafc;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .preview-item {
+            text-align: center;
+            background-color: white;
+            padding: 1em;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .preview-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .preview-item img {
+            width: 100%;
+            max-width: 250px;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .preview-item h4 {
+            margin: 0.5em 0 0 0;
+            color: #6366f1;
+            font-size: 0.9em;
+        }
+
+        .info-box {
+            background-color: #dbeafe;
+            border: 1px solid #3b82f6;
+            border-radius: 8px;
+            padding: 1em;
+            margin: 1em 0;
+        }        .info-box h4 {
+            color: #1d4ed8;
+            margin-top: 0;
+        }
+
+        .preview-button {
+            display: inline-block;
+            background-color: #6366f1;
+            color: white;
+            padding: 1em 2em;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(99, 102, 241, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+
+        .preview-button:hover {
+            background-color: #4f46e5;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(99, 102, 241, 0.4);
+            text-decoration: none;
+            color: white;
+        }
+
+        .preview-button:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 4px rgba(99, 102, 241, 0.3);
+        }
+
+        .preview-button .emoji {
+            margin-right: 0.5em;
+        }
+    </style>
+</head>
+<body>
+    <button class="mobile-nav-toggle" onclick="toggleSidebar()">☰</button>
+    
+    <div class="layout">
+        <div class="sidebar" id="sidebar">
+            <img src="assets/image/ReusekitLogoHorizontal.png" alt="ReuseKit Flutter Framework Logo" class="logo">
+            <h3>Documentation</h3>
+            <ul>
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#app-preview">App Preview</a></li>
+                <li><a href="#getting-started">Getting Started</a></li>
+                <li><a href="#theme-system">Theme System</a></li>
+                <li><a href="#form-widgets">Form Widgets</a></li>
+                <li><a href="#media-file-widgets">Media & File</a></li>
+                <li><a href="#layout-components">Layout</a></li>
+                <li><a href="#scaffold-components">Scaffold</a></li>
+                <li><a href="#navigation-utilities">Navigation</a></li>
+                <li><a href="#type-extensions">Type Extensions</a></li>
+                <li><a href="#state-management">State Management</a></li>
+                <li><a href="#best-practices">Best Practices</a></li>
+                <li><a href="#common-errors-solutions">Common Errors</a></li>
+            </ul>
+        </div>
+
+        <div class="main-content">
+            <div class="container">
+                <h1><span class="emoji">🚀</span>ReuseKit Flutter Framework</h1>
+                <p style="text-align: center; font-size: 1.2em; color: #64748b; margin-bottom: 2em;">
+                    A comprehensive Flutter framework with reusable components and standardized architecture for rapid Flutter app development.
+                </p><div class="table-of-contents">
+            <h2><span class="emoji">📚</span>Table of Contents</h2>            <ul>
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#app-preview">App Preview</a></li>                <li><a href="#getting-started">Getting Started</a>
+                    <ul style="margin-left: 1em; margin-top: 0.3em;">
+                        <li><a href="#system-requirements">System Requirements</a></li>
+                        <li><a href="#fvm-setup">FVM Setup (Recommended)</a></li>
+                        <li><a href="#project-setup">Project Setup</a></li>
+                    </ul>
+                </li>
+                <li><a href="#theme-system">Theme System</a></li>
+                <li><a href="#form-widgets">Form Widgets</a></li>
+                <li><a href="#media-file-widgets">Media & File Widgets</a></li>
+                <li><a href="#layout-components">Layout Components</a></li>
+                <li><a href="#scaffold-components">Scaffold Components</a></li>
+                <li><a href="#navigation-utilities">Navigation & Utilities</a></li>
+                <li><a href="#type-extensions">Type Extensions</a></li>
+                <li><a href="#state-management">State Management</a></li>
+                <li><a href="#best-practices">Best Practices</a></li>
+                <li><a href="#common-errors-solutions">Common Errors & Solutions</a></li>
+                <li><a href="#project-structure">Project Structure</a></li>
+                <li><a href="#contributing">Contributing</a></li>
+            </ul>
+        </div>
+
+        <section id="overview">
+            <h2><span class="emoji">🎯</span>Overview</h2>
+            <p>ReuseKit is a Flutter framework designed to accelerate development by providing:</p>              <div class="overview-grid">
+                <a href="#theme-system" class="feature-card">
+                    <h4><span class="emoji">🧩</span>Reusable Components</h4>
+                    <p>Pre-built widgets with consistent styling</p>
+                </a>
+                <a href="#theme-system" class="feature-card">
+                    <h4><span class="emoji">🎨</span>Theme System</h4>
+                    <p>Centralized color, spacing, and styling configuration</p>
+                </a>
+                <a href="#navigation-utilities" class="feature-card">
+                    <h4><span class="emoji">🧭</span>Navigation Utils</h4>
+                    <p>Context-less navigation and dialog helpers</p>
+                </a>
+                <a href="#form-widgets" class="feature-card">
+                    <h4><span class="emoji">📝</span>Form Widgets</h4>
+                    <p>Standardized form components with validation</p>
+                </a>
+                <a href="#layout-components" class="feature-card">
+                    <h4><span class="emoji">📐</span>Layout Helpers</h4>
+                    <p>Responsive grid and layout components</p>
+                </a>
+                <a href="#type-extensions" class="feature-card">
+                    <h4><span class="emoji">🔧</span>Type Extensions</h4>
+                    <p>Enhanced functionality for common data types</p>
+                </a>
+                <a href="#media-file-widgets" class="feature-card">
+                    <h4><span class="emoji">🎯</span>Media Components</h4>
+                    <p>Image pickers, file pickers, and attachment handlers</p>
+                </a>            </div>
+        </section>
+
+        <section id="app-preview">
+            <h2><span class="emoji">📱</span>App Preview</h2>
+            <p>Explore the ReuseKit framework through these app screenshots showcasing various components and layouts in action:</p>
+            
+            <div class="preview-gallery">
+                <div class="preview-item">
+                    <img src="assets/app_preview/1.png" alt="ReuseKit App Preview 1" loading="lazy">
+                    <h4>Dashboard Interface</h4>
+                </div>
+                <div class="preview-item">
+                    <img src="assets/app_preview/2.png" alt="ReuseKit App Preview 2" loading="lazy">
+                    <h4>Form Components</h4>
+                </div>
+                <div class="preview-item">
+                    <img src="assets/app_preview/3.png" alt="ReuseKit App Preview 3" loading="lazy">
+                    <h4>Navigation & Layout</h4>
+                </div>
+                <div class="preview-item">
+                    <img src="assets/app_preview/4.png" alt="ReuseKit App Preview 4" loading="lazy">
+                    <h4>Data Visualization</h4>
+                </div>
+                <div class="preview-item">
+                    <img src="assets/app_preview/5.png" alt="ReuseKit App Preview 5" loading="lazy">
+                    <h4>Media Components</h4>
+                </div>
+                <div class="preview-item">
+                    <img src="assets/app_preview/6.png" alt="ReuseKit App Preview 6" loading="lazy">
+                    <h4>Theme System</h4>
+                </div>
+                <div class="preview-item">
+                    <img src="assets/app_preview/7.png" alt="ReuseKit App Preview 7" loading="lazy">
+                    <h4>Responsive Design</h4>
+                </div>
+            </div>            <div class="info-box">
+                <h4>🎨 Visual Features Showcase</h4>
+                <p>These screenshots demonstrate the ReuseKit framework's capabilities including:</p>
+                <ul>
+                    <li><strong>Consistent Design Language</strong>: Unified colors, spacing, and typography</li>
+                    <li><strong>Responsive Components</strong>: Adaptive layouts for different screen sizes</li>
+                    <li><strong>Rich Form Elements</strong>: Advanced input fields, pickers, and validation</li>
+                    <li><strong>Modern UI Patterns</strong>: Cards, grids, tabs, and navigation components</li>
+                    <li><strong>Professional Aesthetics</strong>: Clean, modern interface design</li>
+                </ul>
+            </div>
+
+            <div style="text-align: center; margin: 2em 0;">
+                <a href="https://drive.google.com/drive/folders/1Ib96QCaf9B7S9eCXbRbYHcyxx5-GDLyg?usp=sharing" 
+                   target="_blank" 
+                   class="preview-button">
+                    <span class="emoji">📁</span>View More Screenshots
+                </a>
+                <p style="margin-top: 1em; color: #64748b; font-size: 0.9em;">
+                    Access our complete collection of app previews and UI examples
+                </p>
+            </div>
+        </section><section id="getting-started">
+            <h2><span class="emoji">🚀</span>Getting Started</h2>
+              <h3 id="system-requirements">System Requirements</h3>
+            <p>Before starting with ReuseKit, ensure you have the following tools installed:</p>
+              <div class="warning-box">
+                <h4>Required Software</h4>                <ul>
+                    <li><strong>Flutter SDK</strong>: Version 3.32.0 or higher (Latest stable)</li>
+                    <li><strong>Dart SDK</strong>: Version 3.6.0 or higher (included with Flutter)</li>
+                    <li><strong>Java JDK</strong>: Version 17 or higher for Android development</li>
+                    <li><strong>Android Studio</strong>: Latest version with Android SDK</li>
+                    <li><strong>VS Code</strong>: Recommended with Flutter and Dart extensions</li>
+                    <li><strong>FVM (Flutter Version Management)</strong>: Recommended for managing Flutter versions</li>
+                </ul>
+            </div>            <h4>Verify Installation</h4>
+            <p>Check your development environment by running these commands:</p>
+            <pre><code># Check Flutter version (should be 3.32.0 or higher)
+flutter --version
+
+# If using FVM (recommended for this project)
+fvm flutter --version
+
+# Check Java version (should be 17 or higher)
+java --version
+
+# Check Flutter environment and dependencies
+flutter doctor
+
+# Or with FVM
+fvm flutter doctor</code></pre><div class="success-box">
+                <h4>Expected Output Example</h4>
+                <pre><code>Flutter 3.32.0 • channel stable
+Framework • revision 7c1486319
+Engine • revision cb4b5fff73  
+Tools • Dart 3.6.0 • DevTools 2.40.2</code></pre>
+            </div>
+
+            <h3 id="fvm-setup">FVM Setup (Recommended)</h3>
+            <p>FVM (Flutter Version Management) allows you to manage multiple Flutter versions easily. This project uses FVM to ensure consistent Flutter versions across all developers.</p>
+            
+            <h4>Installing FVM</h4>
+            <div class="warning-box">
+                <h5>Installation Options</h5>
+                <p><strong>Using Dart (Recommended):</strong></p>
+                <pre><code>dart pub global activate fvm</code></pre>
+                
+                <p><strong>Using Homebrew (macOS):</strong></p>
+                <pre><code>brew tap leoafarias/fvm
+brew install fvm</code></pre>
+                
+                <p><strong>Using Chocolatey (Windows):</strong></p>
+                <pre><code>choco install fvm</code></pre>
+            </div>
+
+            <h4>Setting Up FVM for This Project</h4>
+            <p>This project is configured to use Flutter version 3.32.0. Follow these steps:</p>
+            <pre><code># 1. Install the required Flutter version
+fvm install 3.32.0
+
+# 2. Use the Flutter version for this project
+fvm use 3.32.0
+
+# 3. Verify the version
+fvm flutter --version
+
+# 4. Run Flutter commands with FVM
+fvm flutter doctor
+fvm flutter pub get</code></pre>
+
+            <div class="info-box">
+                <h5>FVM Configuration</h5>
+                <p>This project includes an <code>.fvmrc</code> file that automatically configures the Flutter version:</p>
+                <pre><code>{
+  "flutter": "3.32.0"
+}</code></pre>
+                <p>The <code>.fvm/</code> directory is already added to <code>.gitignore</code> to avoid committing Flutter SDK files.</p>
+            </div>
+
+            <h4>IDE Configuration for FVM</h4>
+            <div class="success-box">
+                <h5>VS Code Setup</h5>
+                <p>VS Code is already configured to use FVM. Check <code>.vscode/settings.json</code>:</p>
+                <pre><code>{
+  "dart.flutterSdkPath": ".fvm/versions/3.32.0"
+}</code></pre>
+                
+                <h5>Android Studio Setup</h5>
+                <p>Configure Android Studio to use the FVM Flutter SDK:</p>
+                <ol>
+                    <li>Go to <strong>File → Settings → Languages & Frameworks → Flutter</strong></li>
+                    <li>Set Flutter SDK path to: <code>[project_root]/.fvm/versions/3.32.0</code></li>
+                    <li>Apply and restart Android Studio</li>
+                </ol>
+            </div>
+
+            <h3 id="project-setup">Project Setup</h3>
+            <p>Follow these steps to set up and run a ReuseKit project:</p>
+
+            <h4>1. Clone or Create Project</h4>
+            <pre><code># Clone existing project
+git clone &lt;your-project-url&gt;
+cd your-project-name
+
+# Or create new Flutter project
+flutter create my_reusekit_app
+cd my_reusekit_app</code></pre>            <h4>2. Install Dependencies</h4>
+            <p>If using FVM (recommended for this project):</p>
+            <pre><code># Install Flutter version 3.32.0 if not already installed
+fvm install 3.32.0
+
+# Use the correct Flutter version for this project
+fvm use 3.32.0
+
+# Get Flutter packages with FVM
+fvm flutter pub get
+
+# Clean build cache (if needed)
+fvm flutter clean</code></pre>
+            
+            <p>Or with regular Flutter installation:</p>
+            <pre><code># Get Flutter packages
+flutter pub get
+
+# Clean build cache (if needed)
+flutter clean</code></pre>            <h4>3. Run the Project</h4>
+            <p>With FVM (recommended):</p>
+            <pre><code># Run on connected device/emulator
+fvm flutter run
+
+# Run on specific platform
+fvm flutter run -d chrome      # Web
+fvm flutter run -d windows     # Windows
+fvm flutter run -d android     # Android
+fvm flutter run -d ios         # iOS (macOS only)</code></pre>
+            
+            <p>Or with regular Flutter:</p>
+            <pre><code># Run on connected device/emulator
+flutter run
+
+# Run on specific platform
+flutter run -d chrome          # Web
+flutter run -d windows         # Windows
+flutter run -d android         # Android
+flutter run -d ios             # iOS (macOS only)</code></pre>            <h4>4. Build for Production</h4>
+            <p>With FVM (recommended):</p>
+            <pre><code># Build APK for Android
+fvm flutter build apk --release
+
+# Build AAB for Google Play Store
+fvm flutter build appbundle --release
+
+# Build for web
+fvm flutter build web --release
+
+# Build for Windows
+fvm flutter build windows --release</code></pre>
+            
+            <p>Or with regular Flutter:</p>
+            <pre><code># Build APK for Android
+flutter build apk --release
+
+# Build AAB for Google Play Store
+flutter build appbundle --release
+
+# Build for web
+flutter build web --release
+
+# Build for Windows
+flutter build windows --release</code></pre>            <div class="success-box">
+                <h4>Development Tips</h4>
+                <ul>
+                    <li>Use <code>fvm flutter hot reload</code> (r) for fast development</li>
+                    <li>Use <code>fvm flutter hot restart</code> (R) for state reset</li>
+                    <li>Run <code>fvm flutter doctor</code> to check environment issues</li>
+                    <li>Use <code>fvm flutter devices</code> to list available devices</li>
+                    <li>All commands can be run with <code>flutter</code> directly if not using FVM</li>
+                </ul>
+            </div>
+
+            <h3>Import ReuseKit Core</h3>
+            <p>Every new view/page must import these two essentials:</p>
+            
+            <pre><code>import 'package:flutter/material.dart';
+import 'package:reusekit/core.dart';</code></pre>
+
+            <p>The <code>core.dart</code> file provides access to all ReuseKit components, utilities, and theme configurations.</p>
+
+            <h3>Basic View Structure</h3>
+            <pre><code>import 'package:flutter/material.dart';
+import 'package:reusekit/core.dart';
+
+class MyPageView extends StatefulWidget {
+  const MyPageView({super.key});
+
+  @override
+  State&lt;MyPageView&gt; createState() =&gt; _MyPageViewState();
+}
+
+class _MyPageViewState extends State&lt;MyPageView&gt; {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("My Page"),
+      ),
+      body: SingleChildScrollView(
+        padding: EdgeInsets.all(spMd),
+        child: Column(
+          spacing: spMd,
+          children: [
+            // Your content here
+          ],
+        ),
+      ),
+    );
+  }
+}</code></pre>
+        </section>
+
+        <section id="theme-system">
+            <h2><span class="emoji">🎨</span>Theme System</h2>
+            
+            <h3>Color Palette</h3>
+            <p>ReuseKit provides a standardized color system:</p>
+            
+            <div class="color-palette">
+                <div class="color-item">
+                    <div class="color-sample primary"></div>
+                    <strong>primaryColor</strong><br>
+                    <small>#6366F1 - Main brand color</small>
+                </div>
+                <div class="color-item">
+                    <div class="color-sample secondary"></div>
+                    <strong>secondaryColor</strong><br>
+                    <small>#E5E7EB - Secondary/neutral color</small>
+                </div>
+                <div class="color-item">
+                    <div class="color-sample success"></div>
+                    <strong>successColor</strong><br>
+                    <small>#10B981 - Success states</small>
+                </div>
+                <div class="color-item">
+                    <div class="color-sample danger"></div>
+                    <strong>dangerColor</strong><br>
+                    <small>#EF4444 - Error/danger states</small>
+                </div>
+                <div class="color-item">
+                    <div class="color-sample info"></div>
+                    <strong>infoColor</strong><br>
+                    <small>#3B82F6 - Information</small>
+                </div>
+                <div class="color-item">
+                    <div class="color-sample warning"></div>
+                    <strong>warningColor</strong><br>
+                    <small>#F59E0B - Warning states</small>
+                </div>
+            </div>
+
+            <h3>Spacing System</h3>
+            <p>Consistent spacing values for margins, padding, and gaps:</p>
+            <pre><code>spXxs  // 4.0  - Extra extra small
+spXs   // 6.0  - Extra small
+spSm   // 8.0  - Small
+spMd   // 12.0 - Medium (default for scaffold padding)
+spLg   // 16.0 - Large
+spXl   // 20.0 - Extra large
+sp2xl  // 24.0 - 2x large
+sp3xl  // 32.0 - 3x large
+sp4xl  // 40.0 - 4x large</code></pre>
+
+            <h3>Border Radius</h3>
+            <pre><code>radiusXxs  // 2.0
+radiusXs   // 4.0
+radiusSm   // 6.0
+radiusMd   // 8.0
+radiusLg   // 10.0
+radiusXl   // 12.0
+radius2xl  // 16.0
+radius3xl  // 20.0
+radius4xl  // 24.0</code></pre>
+
+            <h3>Font Sizes</h3>
+            <pre><code>// Headings
+fsH1  // 32.0 - Largest heading
+fsH2  // 28.0
+fsH3  // 24.0
+fsH4  // 20.0
+fsH5  // 18.0
+fsH6  // 16.0 - Standard for card headers and section titles
+
+// Regular text sizes
+fsXxs  // 8.0
+fsXs   // 10.0
+fsSm   // 11.0
+fsMd   // 12.0
+fsLg   // 14.0
+fsXl   // 16.0
+fs2xl  // 18.0
+fs3xl  // 20.0
+fs4xl  // 22.0</code></pre>
+
+            <h3>Shadows</h3>
+            <p>Predefined shadow styles:</p>
+            <pre><code>boxShadow: [shadowSm]  // Small shadow for cards
+boxShadow: [shadowMd]  // Medium shadow
+boxShadow: [shadowLg]  // Large shadow
+// Available: shadowNone, shadowXxs, shadowXs, shadowSm, shadowMd, shadowLg, shadowXl, shadowXxl, shadow3xl, shadow4xl</code></pre>
+
+            <h3>Button Sizes</h3>
+            <pre><code>bs.sm  // Small button
+bs.md  // Medium button (default)</code></pre>
+        </section>
+
+        <section id="form-widgets">
+            <h2><span class="emoji">📝</span>Form Widgets</h2>
+            
+            <h3>QTextField - Text Input Field</h3>
+            <pre><code>QTextField(
+  label: "Email Address",
+  value: email,
+  hint: "Enter your email",
+  validator: Validator.required,
+  onChanged: (value) {
+    email = value;
+    setState(() {});
+  },
+)</code></pre>
+
+            <table class="properties-table">
+                <thead>
+                    <tr>
+                        <th>Property</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>label</code></td>
+                        <td>String (required)</td>
+                        <td>Field label</td>
+                    </tr>
+                    <tr>
+                        <td><code>value</code></td>
+                        <td>String (required)</td>
+                        <td>Current value</td>
+                    </tr>
+                    <tr>
+                        <td><code>hint</code></td>
+                        <td>String?</td>
+                        <td>Placeholder text</td>
+                    </tr>
+                    <tr>
+                        <td><code>validator</code></td>
+                        <td>Function?</td>
+                        <td>Validation function</td>
+                    </tr>
+                    <tr>
+                        <td><code>obscureText</code></td>
+                        <td>bool</td>
+                        <td>For password fields</td>
+                    </tr>
+                    <tr>
+                        <td><code>onChanged</code></td>
+                        <td>Function (required)</td>
+                        <td>Value change callback</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>QNumberField - Numeric Input</h3>
+            <pre><code>QNumberField(
+  label: "Price (\$)",
+  value: price.toString(),
+  validator: Validator.required,
+  onChanged: (value) {
+    price = double.tryParse(value) ?? 0.0;
+    setState(() {});
+  },
+)</code></pre>
+
+            <h3>QDropdownField - Dropdown Selection</h3>
+            <pre><code>QDropdownField(
+  label: "Category",
+  items: [
+    {"label": "Option 1", "value": "option1"},
+    {"label": "Option 2", "value": "option2"},
+  ],
+  value: selectedCategory,
+  onChanged: (value, label) {
+    selectedCategory = value; // Always use value, not label
+    setState(() {});
+  },
+)</code></pre>
+
+            <h3>QDatePicker - Date Selection</h3>
+            <pre><code>QDatePicker(
+  label: "Appointment Date",
+  value: DateTime.parse(selectedDate), // Parse string to DateTime
+  onChanged: (value) {
+    selectedDate = value.toString();
+    setState(() {});
+  },
+)</code></pre>
+
+            <h3>QTimePicker - Time Selection</h3>
+            <pre><code>QTimePicker(
+  label: "Appointment Time",
+  value: TimeOfDay.fromDateTime(DateTime.parse(selectedTime)),
+  onChanged: (value) {
+    selectedTime = value!.kkmm; // Convert to string format
+    setState(() {});
+  },
+)</code></pre>
+
+            <h3>QSwitch - Toggle Switch</h3>
+            <pre><code>QSwitch(
+  items: [
+    {
+      "label": "Enable Notifications",
+      "value": true,
+      "checked": enableNotifications,
+    }
+  ],
+  value: [
+    if (enableNotifications) {
+      "label": "Enable Notifications",
+      "value": true,
+      "checked": true
+    }
+  ],
+  onChanged: (values, ids) {
+    enableNotifications = values.isNotEmpty;
+    setState(() {});
+  },
+)</code></pre>
+        </section>
+
+        <section id="media-file-widgets">
+            <h2><span class="emoji">🎯</span>Media & File Widgets</h2>
+            
+            <h3>QImagePicker - Single Image Selection</h3>
+            <pre><code>String profileImage = "";
+
+QImagePicker(
+  label: "Profile Image",
+  value: profileImage,
+  hint: "Select your profile picture",
+  helper: "Image will be uploaded to cloud storage",
+  validator: Validator.required,
+  onChanged: (value) {
+    profileImage = value;
+    setState(() {});
+  },
+)</code></pre>
+
+            <h3>QMultiImagePicker - Multiple Image Selection</h3>
+            <pre><code>List&lt;String&gt; productImages = [];
+
+QMultiImagePicker(
+  label: "Product Images",
+  value: productImages,
+  maxImages: 5,
+  hint: "Add product photos",
+  helper: "You can upload up to 5 high-quality images",
+  validator: (images) {
+    if (images == null || images.isEmpty) {
+      return "At least one image is required";
+    }
+    return null;
+  },
+  onChanged: (value) {
+    productImages = value;
+    setState(() {});
+  },
+)</code></pre>
+
+            <h3>QAttachmentPicker - Universal Attachment Handler</h3>
+            <pre><code>List&lt;String&gt; attachments = [];
+
+QAttachmentPicker(
+  label: "Attachments",
+  value: attachments,
+  hint: "Attach files to your message",
+  helper: "Supports images, documents, videos, and audio files",
+  maxAttachments: 10,
+  allowedTypes: ['image', 'document', 'video', 'audio'],
+  validator: (files) {
+    if (files == null || files.isEmpty) {
+      return "At least one file is required";
+    }
+    return null;
+  },
+  onChanged: (value) {
+    attachments = value;
+    setState(() {});
+  },
+)</code></pre>
+        </section>
+
+        <section id="layout-components">
+            <h2><span class="emoji">📐</span>Layout Components</h2>
+            
+            <h3>ResponsiveGridView - Grid Layout</h3>
+            <pre><code>ResponsiveGridView(
+  padding: EdgeInsets.all(spSm),
+  minItemWidth: 200, // Minimum item width
+  children: items.map((item) {
+    return Container(
+      // Grid item content
+    );
+  }).toList(),
+)</code></pre>
+
+            <h3>QHorizontalScroll - Horizontal Scrolling</h3>
+            <pre><code>QHorizontalScroll(
+  children: List.generate(items.length, (index) {
+    final item = items[index];
+    return Container(
+      width: 280,
+      // Item content
+    );
+  }),
+)</code></pre>
+        </section>
+
+        <section id="scaffold-components">
+            <h2><span class="emoji">🏗️</span>Scaffold Components</h2>
+            
+            <h3>QTabBar - Tab Interface</h3>
+            <pre><code>QTabBar(
+  title: "Dashboard",
+  selectedIndex: currentTab,
+  tabs: [
+    Tab(text: "Overview", icon: Icon(Icons.dashboard)),
+    Tab(text: "Analytics", icon: Icon(Icons.analytics)),
+  ],
+  tabChildren: [
+    OverviewTabView(),
+    AnalyticsTabView(),
+  ],
+  onInit: (tabController) {
+    // Optional: Access to TabController
+  },
+)</code></pre>
+
+            <h3>QBottomBar - Bottom Navigation</h3>
+            <pre><code>QBottomBar(
+  title: "App Title",
+  selectedIndex: currentIndex,
+  items: [
+    BottomNavigationBarItem(
+      icon: Icon(Icons.home),
+      label: "Home",
+    ),
+    BottomNavigationBarItem(
+      icon: Icon(Icons.search),
+      label: "Search",
+    ),
+  ],
+  children: [
+    HomeTabView(),
+    SearchTabView(),
+  ],
+  onTap: (index) {
+    currentIndex = index;
+    setState(() {});
+  },
+)</code></pre>
+        </section>
+
+        <section id="navigation-utilities">
+            <h2><span class="emoji">🧭</span>Navigation & Utilities</h2>
+            
+            <h3>Context-less Navigation</h3>
+            <p>Navigate between pages without requiring BuildContext:</p>
+            <pre><code>// Navigate to new page
+await to(const LoginView());
+
+// Navigate and clear all previous routes
+await offAll(const DashboardView());
+
+// Go back to previous page
+back();</code></pre>
+
+            <h3>Snackbar Utilities</h3>
+            <p>Display contextual messages:</p>
+            <pre><code>ss("Success message");      // Green success snackbar
+se("Error message");        // Red error snackbar
+sw("Warning message");      // Orange warning snackbar
+si("Info message");         // Blue info snackbar</code></pre>
+
+            <h3>Dialog Utilities</h3>
+            <pre><code>// Confirmation dialog
+bool isConfirmed = await confirm("Are you sure you want to delete this item?");
+if (isConfirmed) {
+  // Proceed with deletion
+}
+
+// Alert dialog
+await alert("Information message");</code></pre>
+        </section>
+
+        <section id="type-extensions">
+            <h2><span class="emoji">🔧</span>Type Extensions</h2>
+            
+            <h3>DateTime Extensions</h3>
+            <pre><code>// Date formatting
+DateTime.now().dMMMy          // "15 Jan 2024"
+DateTime.now().dMMMykkss      // "15 Jan 2024 14:30:45"</code></pre>
+
+            <h3>Currency Extension</h3>
+            <pre><code>// Currency formatting for different types
+(123.45).currency             // "123.45"
+(1000).currency               // "1,000"
+"1234.56".currency            // "1,234.56"
+
+// Always cast to double before using currency
+((item["price"] as int).toDouble()).currency</code></pre>
+        </section>
+
+        <section id="state-management">
+            <h2><span class="emoji">🔄</span>State Management</h2>
+            
+            <h3>Preferred State Pattern</h3>
+            <p>Use this pattern for state updates:</p>
+            <pre><code>// Preferred approach
+loading = true;
+setState(() {});
+
+// Instead of
+setState(() {
+  loading = true;
+});</code></pre>
+        </section>
+
+        <section id="best-practices">
+            <h2><span class="emoji">🎯</span>Best Practices</h2>
+            
+            <h3>Import Rules</h3>
+            <div class="success-box">
+                <h4>Required imports for every new view:</h4>
+                <pre><code>import 'package:flutter/material.dart';
+import 'package:reusekit/core.dart';</code></pre>
+                <p>No need to import individual services or models - they're available through <code>core.dart</code>.</p>
+            </div>
+
+            <h3>Forbidden Widgets</h3>
+            <div class="error-box">
+                <h4>❌ Never use these widgets:</h4>
+                <ul>
+                    <li><code>TabBar</code>, <code>TabBarView</code>, <code>DefaultTabController</code> → Use <code>QTabBar</code></li>
+                    <li><code>ListTile</code> → Create custom layouts with Container, Row, Column</li>
+                    <li><code>PageView</code> → Use alternative scroll solutions</li>
+                    <li><code>CustomScrollView</code>, Sliver widgets → Use <code>SingleChildScrollView</code></li>
+                    <li><code>suffixIcon</code>, <code>prefixIcon</code> on TextFields → Use Row layouts with icons</li>
+                </ul>
+            </div>
+
+            <h3>Type Safety & Casting</h3>
+            <div class="warning-box">
+                <h4>Always cast map values before operations:</h4>
+                <pre><code>// Wrong
+item["price"] * item["qty"]
+
+// Correct
+(item["price"] as double) * (item["qty"] as int)</code></pre>
+            </div>
+        </section>
+
+        <section id="common-errors-solutions">
+            <h2><span class="emoji">🚨</span>Common Errors & Solutions</h2>
+            
+            <h3>TextField Width Constraints</h3>
+            <div class="error-box">
+                <h4>Error: <code>InputDecorator cannot have unbounded width</code></h4>
+                <p><strong>Solution:</strong> Always wrap TextFields in Row with Expanded:</p>
+                <pre><code>// ❌ Wrong
+Row(children: [QTextField(...)])
+
+// ✅ Correct  
+Row(children: [Expanded(child: QTextField(...))])</code></pre>
+            </div>
+
+            <h3>RenderFlex Errors</h3>
+            <div class="error-box">
+                <h4>Error: <code>RenderFlex children have non-zero flex but incoming height constraints are unbounded</code></h4>
+                <p><strong>Solution:</strong> Never use Expanded in Column or ScrollView:</p>
+                <pre><code>// ❌ Wrong
+Column(children: [Expanded(child: Widget())])
+
+// ✅ Correct
+Column(children: [Container(width: double.infinity, child: Widget())])</code></pre>
+            </div>
+
+            <h3>Type Casting Errors</h3>
+            <div class="error-box">
+                <h4>Error: <code>type 'int' is not a subtype of type 'double'</code></h4>
+                <p><strong>Solution:</strong> Always wrap casting in parentheses:</p>
+                <pre><code>// ❌ Wrong
+(item["price"] as double / 100)
+
+// ✅ Correct
+((item["price"] as double) / 100)</code></pre>
+            </div>
+        </section>
+
+        <section id="project-structure">
+            <h2><span class="emoji">📱</span>Project Structure</h2>
+            <div class="project-structure">lib/
+├── core.dart                    # Central exports file
+├── core/
+│   ├── theme/
+│   │   └── theme_config.dart    # Theme configuration
+│   ├── widget/
+│   │   ├── button/              # Button components
+│   │   ├── hyper_ui/form/       # Form widgets
+│   │   ├── contextless/         # Navigation utilities
+│   │   ├── responsive/          # Layout components
+│   │   └── scaffold/            # Scaffold components
+│   └── util/
+│       ├── type_extension/      # Type extensions
+│       └── validator/           # Form validators
+└── presentation/                # Application views
+    ├── login_view.dart
+    ├── dashboard_view.dart
+    └── ...</div>
+        </section>
+
+        <section id="contributing">
+            <h2><span class="emoji">🤝</span>Contributing</h2>
+            <p>When creating new views:</p>
+            <ol>
+                <li>Follow the naming convention: <code>XxxView</code> (e.g., <code>LoginView</code>)</li>
+                <li>Import required dependencies (<code>material.dart</code> and <code>core.dart</code>)</li>
+                <li>Use ReuseKit components and theme system</li>
+                <li>Follow layout and state management guidelines</li>
+                <li>Ensure proper TextField constraint handling</li>
+                <li>Use appropriate file and media picker components</li>
+                <li>Follow type casting safety rules</li>
+            </ol>
+        </section>
+
+        <footer style="text-align: center; margin-top: 3em; padding: 2em; border-top: 1px solid #e2e8f0; color: #64748b;">
+            <h2 style="color: #6366f1; margin-bottom: 0.5em;">
+                <span class="emoji">🚀</span>ReuseKit
+            </h2>
+            <p style="font-size: 1.1em; margin: 0;">
+                Accelerating Flutter development with reusable, well-designed components.
+            </p>        </footer>
+            </div>
+        </div>
+    </div>
+
+    <a href="#" class="back-to-top">↑ Top</a>
+
+    <script>
+        // Mobile navigation toggle
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('open');
+        }
+
+        // Close sidebar when clicking on navigation links (mobile)
+        document.querySelectorAll('.sidebar a').forEach(link => {
+            link.addEventListener('click', function() {
+                if (window.innerWidth <= 768) {
+                    document.getElementById('sidebar').classList.remove('open');
+                }
+            });
+        });
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Show/hide back to top button
+        const backToTopButton = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+
+        // Initially hide the button
+        backToTopButton.style.display = 'none';        // Back to top button functionality
+        backToTopButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Smooth scrolling for all internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+{
+    "widget_restrictions": {
+        "forbidden_widgets": [
+            "SliverWidgets",
+            "SliverToBoxAdapter",
+            "CustomScrollView", 
+            "drawer",
+            "DefaultTabController",
+            "TabBarView",
+            "TabBar",
+            "DropdownButton",
+            "PageView",
+            "SingleTickerProviderStateMixin"
+        ],
+        "recommended_alternatives": {
+            "bottom_navigation": {
+                "instead_of": "DefaultTabController + TabBarView + BottomNavigationBar",
+                "use": "QBottomBar untuk halaman dengan bottom navigation bar"
+            },
+            "tab_functionality": {
+                "instead_of": "DefaultTabController + TabBarView + TabBar",
+                "use": "QTabBar untuk halaman dengan tab bar"
+            },
+            "dropdown": {
+                "instead_of": "DropdownButton",
+                "use": "QDropdownField"
+            },
+            "simple_pages": {
+                "instead_of": "Complex navigation widgets",
+                "use": "Gunakan scaffold biasa saja jika tidak ada bottom navigation bar atau tab bar"
+            }
+        }
+    }
+}

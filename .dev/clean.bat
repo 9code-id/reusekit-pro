@@ -1,0 +1,1 @@
+rmdir /s /q lib\presentation && mkdir lib\presentation

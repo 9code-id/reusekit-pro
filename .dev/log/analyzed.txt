@@ -1,0 +1,349 @@
+  error - The argument type 'void Function(String, String)' can't be assigned to the parameter type 'dynamic Function(dynamic, String?)'.  - lib\presentation\aba_create_invoice_view.dart:318:34 - argument_type_not_assignable
+  error - The argument type 'void Function(String, String)' can't be assigned to the parameter type 'dynamic Function(dynamic, String?)'.  - lib\presentation\aba_edit_invoice_view.dart:502:34 - argument_type_not_assignable
+  error - The instance member 'vendors' can't be accessed in an initializer - lib\presentation\aba_vendor_performance_view.dart:137:8 - implicit_this_reference_in_initializer
+  error - Expected to find ')' - lib\presentation\cma_battery_monitoring_view.dart:545:108 - expected_token
+  error - Expected a method, getter, setter or operator declaration - lib\presentation\cma_calendar_view.dart:604:1 - expected_executable
+  error - Expected to find ')' - lib\presentation\cma_campaign_detail_view.dart:869:46 - expected_token
+  error - The returned type 'List<PopupMenuItem<Object>>' isn't returnable from a 'List<PopupMenuEntry<String>>' function, as required by the closure's context - lib\presentation\cma_customer_search_view.dart:634:39 - return_of_invalid_type_from_closure
+  error - Undefined name 'filteredWidgets' - lib\presentation\cma_dashboard_widgets_view.dart:888:20 - undefined_identifier
+  error - The method 'LineChartPainter' isn't defined for the type '_CmaDataVisualizationViewState' - lib\presentation\cma_data_visualization_view.dart:370:20 - undefined_method
+  error - The method 'BarChartPainter' isn't defined for the type '_CmaDataVisualizationViewState' - lib\presentation\cma_data_visualization_view.dart:375:20 - undefined_method
+  error - The method 'PieChartPainter' isn't defined for the type '_CmaDataVisualizationViewState' - lib\presentation\cma_data_visualization_view.dart:380:20 - undefined_method
+  error - Expected a method, getter, setter or operator declaration - lib\presentation\cma_emergency_contacts_view.dart:671:1 - expected_executable
+  error - The method '_MetricsChartPainter' isn't defined for the type '_CmaMetricsViewState' - lib\presentation\cma_metrics_view.dart:488:24 - undefined_method
+  error - Undefined name 'filteredReports' - lib\presentation\cma_reports_view.dart:217:20 - undefined_identifier
+  error - The method 'toDouble' isn't defined for the type 'String' - lib\presentation\cma_ride_share_view.dart:903:116 - undefined_method
+  error - The method '_showEmergencyDialog' isn't defined for the type '_CmaRoadsideAssistanceViewState' - lib\presentation\cma_roadside_assistance_view.dart:98:30 - undefined_method
+  error - The method '_callEmergency' isn't defined for the type '_CmaRoadsideAssistanceViewState' - lib\presentation\cma_roadside_assistance_view.dart:159:36 - undefined_method
+  error - The method '_showQuickRequestDialog' isn't defined for the type '_CmaRoadsideAssistanceViewState' - lib\presentation\cma_roadside_assistance_view.dart:167:36 - undefined_method
+  error - The method '_getCurrentLocation' isn't defined for the type '_CmaRoadsideAssistanceViewState' - lib\presentation\cma_roadside_assistance_view.dart:223:34 - undefined_method
+  error - The method '_findProviders' isn't defined for the type '_CmaRoadsideAssistanceViewState' - lib\presentation\cma_roadside_assistance_view.dart:251:36 - undefined_method
+  error - The method '_requestAssistance' isn't defined for the type '_CmaRoadsideAssistanceViewState' - lib\presentation\cma_roadside_assistance_view.dart:260:36 - undefined_method
+  error - The method '_refreshProviders' isn't defined for the type '_CmaRoadsideAssistanceViewState' - lib\presentation\cma_roadside_assistance_view.dart:296:34 - undefined_method
+  error - The method '_callProvider' isn't defined for the type '_CmaRoadsideAssistanceViewState' - lib\presentation\cma_roadside_assistance_view.dart:381:36 - undefined_method
+  error - The method '_bookProvider' isn't defined for the type '_CmaRoadsideAssistanceViewState' - lib\presentation\cma_roadside_assistance_view.dart:390:36 - undefined_method
+  error - The method '_viewAllHistory' isn't defined for the type '_CmaRoadsideAssistanceViewState' - lib\presentation\cma_roadside_assistance_view.dart:426:32 - undefined_method
+  error - The method '_viewHistoryDetails' isn't defined for the type '_CmaRoadsideAssistanceViewState' - lib\presentation\cma_roadside_assistance_view.dart:512:26 - undefined_method
+  error - Undefined name 'vehicleInfo' - lib\presentation\cma_roadside_assistance_view.dart:554:15 - undefined_identifier
+  error - Undefined name 'selectedService' - lib\presentation\cma_roadside_assistance_view.dart:583:31 - undefined_identifier
+  error - Undefined name 'serviceTypes' - lib\presentation\cma_roadside_assistance_view.dart:590:22 - undefined_identifier
+  error - Undefined name 'selectedService' - lib\presentation\cma_roadside_assistance_view.dart:591:22 - undefined_identifier
+  error - Undefined name 'selectedService' - lib\presentation\cma_roadside_assistance_view.dart:593:17 - undefined_identifier
+  error - Undefined name 'issueDescription' - lib\presentation\cma_roadside_assistance_view.dart:599:22 - undefined_identifier
+  error - Undefined name 'issueDescription' - lib\presentation\cma_roadside_assistance_view.dart:602:17 - undefined_identifier
+  error - Expected a method, getter, setter or operator declaration - lib\presentation\cma_troubleshooting_view.dart:629:1 - expected_executable
+  error - Expected a method, getter, setter or operator declaration - lib\presentation\coma_equipment_cost_view.dart:675:1 - expected_executable
+  error - Expected a method, getter, setter or operator declaration - lib\presentation\coma_equipment_inspection_view.dart:742:1 - expected_executable
+  error - Expected a method, getter, setter or operator declaration - lib\presentation\coma_fuel_tracking_view.dart:692:1 - expected_executable
+  error - Expected to find ')' - lib\presentation\coma_progress_reports_view.dart:817:83 - expected_token
+  error - Expected to find ')' - lib\presentation\coma_progress_reports_view.dart:880:84 - expected_token
+  error - Expected to find ')' - lib\presentation\coma_weather_tracking_view.dart:201:53 - expected_token
+  error - Expected to find ')' - lib\presentation\coma_weather_tracking_view.dart:801:57 - expected_token
+  error - Undefined name 'avgMonthlyRevenue' - lib\presentation\crm_agent_profile_view.dart:1136:28 - undefined_identifier
+  error - The named parameter 'flex' isn't defined - lib\presentation\crm_contact_management_view.dart:175:7 - undefined_named_parameter
+  error - The named parameter 'flex' isn't defined - lib\presentation\crm_lead_conversion_view.dart:131:7 - undefined_named_parameter
+  error - The named parameter 'flex' isn't defined - lib\presentation\crm_lead_pipeline_view.dart:118:7 - undefined_named_parameter
+  error - The named parameter 'flex' isn't defined - lib\presentation\crm_lead_scoring_view.dart:192:7 - undefined_named_parameter
+  error - The named parameter 'flex' isn't defined - lib\presentation\crm_lead_sources_view.dart:150:7 - undefined_named_parameter
+  error - The element type 'Map<String, dynamic>' can't be assigned to the list type 'Widget' - lib\presentation\crm_lead_sources_view.dart:837:18 - list_element_type_not_assignable
+  error - Expected to find ')' - lib\presentation\crm_register_view.dart:491:6 - expected_token
+  error - The method '_CrmSecuritySettingsViewState' isn't defined for the type 'CrmSecuritySettingsView' - lib\presentation\crm_security_settings_view.dart:6:51 - undefined_method
+  error - Directives must appear before any declarations - lib\presentation\crm_security_settings_view.dart:9:1 - directive_after_declaration
+  error - Directives must appear before any declarations - lib\presentation\crm_security_settings_view.dart:10:1 - directive_after_declaration
+  error - The name 'CrmSecuritySettingsView' is already defined - lib\presentation\crm_security_settings_view.dart:12:7 - duplicate_definition
+  error - The method '_CrmSecuritySettingsViewState' isn't defined for the type 'CrmSecuritySettingsView' - lib\presentation\crm_security_settings_view.dart:14:51 - undefined_method
+  error - The argument for the named parameter 'border' was already specified - lib\presentation\crm_ticket_assignment_view.dart:334:11 - duplicate_named_argument
+  error - The argument for the named parameter 'border' was already specified - lib\presentation\crm_ticket_escalation_view.dart:353:11 - duplicate_named_argument
+  error - Expected a method, getter, setter or operator declaration - lib\presentation\dla_delivery_schedule_view.dart:922:7 - expected_executable
+  error - Expected a method, getter, setter or operator declaration - lib\presentation\dla_delivery_schedule_view.dart:922:8 - expected_executable
+  error - Expected to find ';' - lib\presentation\dla_delivery_schedule_view.dart:923:7 - expected_token
+  error - Variables must be declared using the keywords 'const', 'final', 'var' or a type name - lib\presentation\dla_delivery_schedule_view.dart:923:7 - missing_const_final_var_or_type
+  error - Expected a method, getter, setter or operator declaration - lib\presentation\dla_delivery_schedule_view.dart:923:18 - expected_executable
+  error - Expected a method, getter, setter or operator declaration - lib\presentation\dla_delivery_schedule_view.dart:923:20 - expected_executable
+  error - A function body must be provided - lib\presentation\dla_delivery_schedule_view.dart:924:31 - missing_function_body
+  error - Expected a method, getter, setter or operator declaration - lib\presentation\dla_delivery_schedule_view.dart:924:31 - expected_executable
+  error - A function body must be provided - lib\presentation\dla_delivery_schedule_view.dart:925:34 - missing_function_body
+  error - Expected a method, getter, setter or operator declaration - lib\presentation\dla_delivery_schedule_view.dart:925:34 - expected_executable
+  error - A function body must be provided - lib\presentation\dla_delivery_schedule_view.dart:926:30 - missing_function_body
+  error - Expected a method, getter, setter or operator declaration - lib\presentation\dla_delivery_schedule_view.dart:926:30 - expected_executable
+  error - A function body must be provided - lib\presentation\dla_delivery_schedule_view.dart:927:34 - missing_function_body
+  error - Expected a method, getter, setter or operator declaration - lib\presentation\dla_delivery_schedule_view.dart:927:34 - expected_executable
+  error - Expected a method, getter, setter or operator declaration - lib\presentation\dla_delivery_schedule_view.dart:928:7 - expected_executable
+  error - Expected a method, getter, setter or operator declaration - lib\presentation\dla_delivery_schedule_view.dart:928:8 - expected_executable
+  error - Expected a method, getter, setter or operator declaration - lib\presentation\dla_delivery_schedule_view.dart:929:5 - expected_executable
+  error - Unexpected text ';' - lib\presentation\dla_delivery_schedule_view.dart:929:6 - unexpected_token
+  error - Expected a method, getter, setter or operator declaration - lib\presentation\dla_delivery_schedule_view.dart:930:3 - expected_executable
+  error - Expected a method, getter, setter or operator declaration - lib\presentation\dla_delivery_schedule_view.dart:931:1 - expected_executable
+  error - Expected a method, getter, setter or operator declaration - lib\presentation\dla_gps_tracking_view.dart:773:1 - expected_executable
+  error - Expected a method, getter, setter or operator declaration - lib\presentation\dla_live_tracking_view.dart:790:1 - expected_executable
+  error - Expected a method, getter, setter or operator declaration - lib\presentation\dla_location_view.dart:706:1 - expected_executable
+  error - Expected a method, getter, setter or operator declaration - lib\presentation\dla_route_optimization_view.dart:613:1 - expected_executable
+  error - The element type 'Map<String, dynamic>' can't be assigned to the list type 'Widget' - lib\presentation\dms_content_templates_view.dart:627:20 - list_element_type_not_assignable
+  error - This expression has a type of 'void' so its value can't be used - lib\presentation\dms_content_templates_view.dart:630:21 - use_of_void_result
+  error - Expected to find ')' - lib\presentation\dms_performance_summary_view.dart:546:67 - expected_token
+  error - Expected to find ')' - lib\presentation\dms_social_accounts_view.dart:360:71 - expected_token
+  error - Expected to find ')' - lib\presentation\dms_social_analytics_view.dart:278:55 - expected_token
+  error - Expected to find ')' - lib\presentation\dms_social_analytics_view.dart:286:50 - expected_token
+  error - Expected to find ')' - lib\presentation\dms_social_analytics_view.dart:465:82 - expected_token
+  error - Expected to find ')' - lib\presentation\dms_social_analytics_view.dart:466:72 - expected_token
+  error - Expected to find ')' - lib\presentation\dms_social_analytics_view.dart:467:84 - expected_token
+  error - Expected to find ')' - lib\presentation\dms_social_analytics_view.dart:565:44 - expected_token
+  error - Expected to find ')' - lib\presentation\dms_social_analytics_view.dart:730:70 - expected_token
+  error - The element type 'Map<String, dynamic>' can't be assigned to the list type 'Widget' - lib\presentation\dms_social_media_management_view.dart:641:20 - list_element_type_not_assignable
+  error - This expression has a type of 'void' so its value can't be used - lib\presentation\dms_social_media_management_view.dart:644:21 - use_of_void_result
+  error - Expected to find ')' - lib\presentation\dms_website_list_view.dart:363:53 - expected_token
+  error - Expected to find ')' - lib\presentation\dms_website_management_view.dart:472:53 - expected_token
+  error - The element type 'int' can't be assigned to the map key type 'String' - lib\presentation\dms_website_verification_view.dart:79:5 - map_key_type_not_assignable
+  error - The element type 'int' can't be assigned to the map key type 'String' - lib\presentation\dms_website_verification_view.dart:84:5 - map_key_type_not_assignable
+  error - The element type 'int' can't be assigned to the map key type 'String' - lib\presentation\dms_website_verification_view.dart:87:5 - map_key_type_not_assignable
+  error - The element type 'int' can't be assigned to the map key type 'String' - lib\presentation\dms_website_verification_view.dart:93:5 - map_key_type_not_assignable
+  error - The argument type 'String' can't be assigned to the parameter type 'Color?'.  - lib\presentation\ecm_app_customization_view.dart:68:20 - argument_type_not_assignable
+  error - The argument type 'String' can't be assigned to the parameter type 'Color?'.  - lib\presentation\ecm_app_customization_view.dart:125:26 - argument_type_not_assignable
+  error - The argument type 'String' can't be assigned to the parameter type 'Color?'.  - lib\presentation\ecm_app_customization_view.dart:186:20 - argument_type_not_assignable
+  error - The argument type 'String' can't be assigned to the parameter type 'Color?'.  - lib\presentation\ecm_app_customization_view.dart:203:20 - argument_type_not_assignable
+  error - The argument type 'Object' can't be assigned to the parameter type 'Color?'.  - lib\presentation\ecm_app_customization_view.dart:268:32 - argument_type_not_assignable
+  error - The argument type 'String' can't be assigned to the parameter type 'Color?'.  - lib\presentation\ecm_app_customization_view.dart:291:20 - argument_type_not_assignable
+  error - The argument type 'String' can't be assigned to the parameter type 'Color?'.  - lib\presentation\ecm_app_customization_view.dart:383:20 - argument_type_not_assignable
+  error - The argument type 'String' can't be assigned to the parameter type 'Color?'.  - lib\presentation\ecm_app_customization_view.dart:421:26 - argument_type_not_assignable
+  error - The argument type 'String' can't be assigned to the parameter type 'Color?'.  - lib\presentation\ecm_app_customization_view.dart:430:26 - argument_type_not_assignable
+  error - The argument type 'String' can't be assigned to the parameter type 'Color?'.  - lib\presentation\ecm_app_customization_view.dart:467:20 - argument_type_not_assignable
+  error - The argument type 'String' can't be assigned to the parameter type 'Color?'.  - lib\presentation\ecm_app_customization_view.dart:559:20 - argument_type_not_assignable
+  error - The argument type 'Object' can't be assigned to the parameter type 'Color?'.  - lib\presentation\ecm_app_customization_view.dart:730:32 - argument_type_not_assignable
+  error - Illegal character '8204' - lib\presentation\ecm_keynote_sessions_view.dart:4:20 - illegal_character
+  error - Illegal character '8204' - lib\presentation\ecm_keynote_sessions_view.dart:6:22 - illegal_character
+  error - Illegal character '8204' - lib\presentation\ecm_keynote_sessions_view.dart:6:65 - illegal_character
+  error - Illegal character '8204' - lib\presentation\ecm_keynote_sessions_view.dart:9:21 - illegal_character
+  error - Illegal character '8204' - lib\presentation\ecm_keynote_sessions_view.dart:9:64 - illegal_character
+  error - Local variable 'liveStreams' can't be referenced before it is declared - lib\presentation\ecm_live_streaming_view.dart:240:26 - referenced_before_declaration
+  error - The final variable 'liveStreams' can't be read because it's potentially unassigned at this point - lib\presentation\ecm_live_streaming_view.dart:240:26 - read_potentially_unassigned_final
+  error - The argument type 'Object' can't be assigned to the parameter type 'Color?'.  - lib\presentation\ecm_mobile_app_builder_view.dart:105:30 - argument_type_not_assignable
+  error - The argument type 'String' can't be assigned to the parameter type 'Color?'.  - lib\presentation\ecm_mobile_app_builder_view.dart:126:20 - argument_type_not_assignable
+  error - The argument type 'String' can't be assigned to the parameter type 'Color?'.  - lib\presentation\ecm_mobile_app_builder_view.dart:190:20 - argument_type_not_assignable
+  error - The method 'withAlpha' isn't defined for the type 'String' - lib\presentation\ecm_mobile_app_builder_view.dart:220:52 - undefined_method
+  error - The argument type 'Object' can't be assigned to the parameter type 'Color'.  - lib\presentation\ecm_mobile_app_builder_view.dart:222:28 - argument_type_not_assignable
+  error - The argument type 'Object' can't be assigned to the parameter type 'Color?'.  - lib\presentation\ecm_mobile_app_builder_view.dart:234:32 - argument_type_not_assignable
+  error - The argument type 'String' can't be assigned to the parameter type 'Color?'.  - lib\presentation\ecm_mobile_app_builder_view.dart:250:32 - argument_type_not_assignable
+  error - The argument type 'String' can't be assigned to the parameter type 'Color?'.  - lib\presentation\ecm_mobile_app_builder_view.dart:304:20 - argument_type_not_assignable
+  error - The argument type 'String' can't be assigned to the parameter type 'Color?'.  - lib\presentation\ecm_mobile_app_builder_view.dart:321:20 - argument_type_not_assignable
+  error - The argument type 'Object' can't be assigned to the parameter type 'Color'.  - lib\presentation\ecm_mobile_app_builder_view.dart:346:34 - argument_type_not_assignable
+  error - The argument type 'Object' can't be assigned to the parameter type 'Color?'.  - lib\presentation\ecm_mobile_app_builder_view.dart:361:32 - argument_type_not_assignable
+  error - The argument type 'String' can't be assigned to the parameter type 'Color?'.  - lib\presentation\ecm_mobile_app_builder_view.dart:376:20 - argument_type_not_assignable
+  error - The argument type 'String' can't be assigned to the parameter type 'Color?'.  - lib\presentation\ecm_mobile_app_builder_view.dart:437:20 - argument_type_not_assignable
+  error - The argument type 'String' can't be assigned to the parameter type 'Color?'.  - lib\presentation\ecm_mobile_app_builder_view.dart:480:36 - argument_type_not_assignable
+  error - Expected to find ')' - lib\presentation\ecm_revenue_tracking_view.dart:405:69 - expected_token
+  error - The method 'toLowerCase' can't be unconditionally invoked because the receiver can be 'null' - lib\presentation\ema_event_categories_view.dart:148:31 - unchecked_use_of_nullable_value
+  error - The method 'toLowerCase' can't be unconditionally invoked because the receiver can be 'null' - lib\presentation\ema_event_categories_view.dart:149:38 - unchecked_use_of_nullable_value
+  error - Undefined name 'spSM' - lib\presentation\ema_events_view.dart:1328:39 - undefined_identifier
+  error - The method 'CornerPainter' isn't defined for the type '_EmaQrScannerViewState' - lib\presentation\ema_qr_scanner_view.dart:222:20 - undefined_method
+  error - The operator '>' can't be unconditionally invoked because the receiver can be 'null' - lib\presentation\ema_rsvp_view.dart:475:39 - unchecked_use_of_nullable_value
+  error - The operator '-' can't be unconditionally invoked because the receiver can be 'null' - lib\presentation\ema_rsvp_view.dart:475:62 - unchecked_use_of_nullable_value
+  error - The argument type 'int?' can't be assigned to the parameter type 'num'.  - lib\presentation\ema_rsvp_view.dart:475:64 - argument_type_not_assignable
+  error - The argument type 'int?' can't be assigned to the parameter type 'num'.  - lib\presentation\ema_rsvp_view.dart:475:84 - argument_type_not_assignable
+  error - The element type 'Text' can't be assigned to the list type 'Container' - lib\presentation\ema_venue_availability_view.dart:695:37 - list_element_type_not_assignable
+  error - The argument type 'Object?' can't be assigned to the parameter type 'Iterable<dynamic>'.  - lib\presentation\ema_venue_detail_view.dart:120:38 - argument_type_not_assignable
+  error - The argument type 'Object?' can't be assigned to the parameter type 'Iterable<dynamic>'.  - lib\presentation\ema_venue_detail_view.dart:510:42 - argument_type_not_assignable
+  error - The argument type 'Object?' can't be assigned to the parameter type 'Iterable<dynamic>'.  - lib\presentation\ema_venue_detail_view.dart:683:41 - argument_type_not_assignable
+  error - The method 'toLowerCase' can't be unconditionally invoked because the receiver can be 'null' - lib\presentation\ema_venue_view.dart:175:44 - unchecked_use_of_nullable_value
+  error - The method 'toLowerCase' can't be unconditionally invoked because the receiver can be 'null' - lib\presentation\ema_venue_view.dart:176:49 - unchecked_use_of_nullable_value
+  error - The method 'toLowerCase' can't be unconditionally invoked because the receiver can be 'null' - lib\presentation\ema_venue_view.dart:177:45 - unchecked_use_of_nullable_value
+  error - The argument type 'Object?' can't be assigned to the parameter type 'Iterable<dynamic>'.  - lib\presentation\ema_venue_view.dart:214:57 - argument_type_not_assignable
+  error - The expression doesn't evaluate to a function, so it can't be invoked - lib\presentation\fma_cooking_timers_view.dart:350:23 - invocation_of_non_function_expression
+  error - Instance member 'left' can't be accessed using static access - lib\presentation\fma_cooking_timers_view.dart:350:30 - static_access_to_instance_member
+  error - The expression doesn't evaluate to a function, so it can't be invoked - lib\presentation\fma_cooking_timers_view.dart:821:25 - invocation_of_non_function_expression
+  error - Instance member 'left' can't be accessed using static access - lib\presentation\fma_cooking_timers_view.dart:821:32 - static_access_to_instance_member
+  error - Undefined name 'shadowShadow' - lib\presentation\fma_insurance_tracking_view.dart:308:31 - undefined_identifier
+  error - The expression doesn't evaluate to a function, so it can't be invoked - lib\presentation\fma_kitchen_operations_view.dart:343:23 - invocation_of_non_function_expression
+  error - Instance member 'left' can't be accessed using static access - lib\presentation\fma_kitchen_operations_view.dart:343:30 - static_access_to_instance_member
+  error - The expression doesn't evaluate to a function, so it can't be invoked - lib\presentation\fma_kitchen_operations_view.dart:560:25 - invocation_of_non_function_expression
+  error - Instance member 'left' can't be accessed using static access - lib\presentation\fma_kitchen_operations_view.dart:560:32 - static_access_to_instance_member
+  error - The expression doesn't evaluate to a function, so it can't be invoked - lib\presentation\fma_kitchen_operations_view.dart:785:23 - invocation_of_non_function_expression
+  error - Instance member 'left' can't be accessed using static access - lib\presentation\fma_kitchen_operations_view.dart:785:30 - static_access_to_instance_member
+  error - The argument type 'List<Map<String, dynamic>>' can't be assigned to the parameter type 'List<Widget>'.  - lib\presentation\fma_marketing_campaigns_view.dart:946:29 - argument_type_not_assignable
+  error - This expression has a type of 'void' so its value can't be used - lib\presentation\fma_marketing_campaigns_view.dart:949:23 - use_of_void_result
+  error - The argument type 'List<Map<String, dynamic>>' can't be assigned to the parameter type 'List<Widget>'.  - lib\presentation\fma_nutritional_info_view.dart:844:29 - argument_type_not_assignable
+  error - This expression has a type of 'void' so its value can't be used - lib\presentation\fma_nutritional_info_view.dart:846:23 - use_of_void_result
+  error - The expression doesn't evaluate to a function, so it can't be invoked - lib\presentation\fma_prep_station_view.dart:336:23 - invocation_of_non_function_expression
+  error - Instance member 'left' can't be accessed using static access - lib\presentation\fma_prep_station_view.dart:336:30 - static_access_to_instance_member
+  error - The expression doesn't evaluate to a function, so it can't be invoked - lib\presentation\fma_prep_station_view.dart:631:23 - invocation_of_non_function_expression
+  error - Instance member 'left' can't be accessed using static access - lib\presentation\fma_prep_station_view.dart:631:30 - static_access_to_instance_member
+  error - The expression doesn't evaluate to a function, so it can't be invoked - lib\presentation\fma_prep_station_view.dart:781:25 - invocation_of_non_function_expression
+  error - Instance member 'left' can't be accessed using static access - lib\presentation\fma_prep_station_view.dart:781:32 - static_access_to_instance_member
+  error - The expression doesn't evaluate to a function, so it can't be invoked - lib\presentation\fma_quality_control_view.dart:434:23 - invocation_of_non_function_expression
+  error - Instance member 'left' can't be accessed using static access - lib\presentation\fma_quality_control_view.dart:434:30 - static_access_to_instance_member
+  error - The expression doesn't evaluate to a function, so it can't be invoked - lib\presentation\fma_quality_control_view.dart:692:23 - invocation_of_non_function_expression
+  error - Instance member 'left' can't be accessed using static access - lib\presentation\fma_quality_control_view.dart:692:30 - static_access_to_instance_member
+  error - The expression doesn't evaluate to a function, so it can't be invoked - lib\presentation\fma_quality_control_view.dart:892:23 - invocation_of_non_function_expression
+  error - Instance member 'left' can't be accessed using static access - lib\presentation\fma_quality_control_view.dart:892:30 - static_access_to_instance_member
+  error - The argument type 'List<Map<String, dynamic>>' can't be assigned to the parameter type 'List<Widget>'.  - lib\presentation\fma_recipe_management_view.dart:849:29 - argument_type_not_assignable
+  error - This expression has a type of 'void' so its value can't be used - lib\presentation\fma_recipe_management_view.dart:851:23 - use_of_void_result
+  error - The expression doesn't evaluate to a function, so it can't be invoked - lib\presentation\fma_temperature_log_view.dart:363:23 - invocation_of_non_function_expression
+  error - Instance member 'left' can't be accessed using static access - lib\presentation\fma_temperature_log_view.dart:363:30 - static_access_to_instance_member
+  error - The expression doesn't evaluate to a function, so it can't be invoked - lib\presentation\fma_temperature_log_view.dart:607:23 - invocation_of_non_function_expression
+  error - Instance member 'left' can't be accessed using static access - lib\presentation\fma_temperature_log_view.dart:607:30 - static_access_to_instance_member
+  error - The expression doesn't evaluate to a function, so it can't be invoked - lib\presentation\fma_temperature_log_view.dart:793:23 - invocation_of_non_function_expression
+  error - Instance member 'left' can't be accessed using static access - lib\presentation\fma_temperature_log_view.dart:793:30 - static_access_to_instance_member
+  error - The argument type 'List<Map<String, dynamic>>' can't be assigned to the parameter type 'List<Widget>'.  - lib\presentation\fma_training_programs_view.dart:372:29 - argument_type_not_assignable
+  error - This expression has a type of 'void' so its value can't be used - lib\presentation\fma_training_programs_view.dart:375:23 - use_of_void_result
+  error - Expected to find ')' - lib\presentation\fsm_customer_locations_view.dart:372:67 - expected_token
+  error - The name '_buildMapViewTab' is already defined - lib\presentation\fsm_field_overview_view.dart:1097:10 - duplicate_definition
+  error - The method 'MapPainter' isn't defined for the type '_FsmGpsTrackingViewState' - lib\presentation\fsm_gps_tracking_view.dart:364:26 - undefined_method
+  error - Expected to find ')' - lib\presentation\fsm_technician_status_view.dart:774:65 - expected_token
+  error - The instance member 'selectedLanguage' can't be accessed in an initializer - lib\presentation\gea_settings_view.dart:40:43 - implicit_this_reference_in_initializer
+  error - The instance member 'selectedCurrency' can't be accessed in an initializer - lib\presentation\gea_settings_view.dart:41:43 - implicit_this_reference_in_initializer
+  error - The instance member 'selectedRegion' can't be accessed in an initializer - lib\presentation\gea_settings_view.dart:42:41 - implicit_this_reference_in_initializer
+  error - The instance member 'selectedTheme' can't be accessed in an initializer - lib\presentation\gea_settings_view.dart:43:40 - implicit_this_reference_in_initializer
+  error - Conditions must have a static type of 'bool' - lib\presentation\hca_cholesterol_tracker_view.dart:1200:35 - non_bool_condition
+  error - The argument type 'bool' can't be assigned to the parameter type 'num'.  - lib\presentation\hca_cholesterol_tracker_view.dart:1201:21 - argument_type_not_assignable
+  error - A value of type 'String?' can't be assigned to a variable of type 'String' - lib\presentation\hca_chronic_condition_view.dart:572:39 - invalid_assignment
+  error - A value of type 'String?' can't be assigned to a variable of type 'String' - lib\presentation\hca_chronic_condition_view.dart:1051:31 - invalid_assignment
+  error - The named parameter 'helper' isn't defined - lib\presentation\hca_health_questionnaire_view.dart:625:13 - undefined_named_parameter
+  error - The method 'StressBarPainter' isn't defined for the type '_HcaStressLevelViewState' - lib\presentation\hca_stress_level_view.dart:264:40 - undefined_method
+  error - The argument type 'Object?' can't be assigned to the parameter type 'String'.  - lib\presentation\ima_aging_report_view.dart:774:50 - argument_type_not_assignable
+  error - The argument type 'Object?' can't be assigned to the parameter type 'IconData?'.  - lib\presentation\ima_aging_report_view.dart:778:25 - argument_type_not_assignable
+  error - The argument type 'Object?' can't be assigned to the parameter type 'String'.  - lib\presentation\ima_aging_report_view.dart:779:50 - argument_type_not_assignable
+  error - The argument type 'Object?' can't be assigned to the parameter type 'String'.  - lib\presentation\ima_aging_report_view.dart:803:60 - argument_type_not_assignable
+  error - The argument type 'Object?' can't be assigned to the parameter type 'String'.  - lib\presentation\ima_aging_report_view.dart:811:62 - argument_type_not_assignable
+  error - The getter 'jm' isn't defined for the type 'DateTime' - lib\presentation\ima_alerts_view.dart:556:120 - undefined_getter
+  error - The getter 'dMMMYYYkkmm' isn't defined for the type 'DateTime' - lib\presentation\ima_movement_report_view.dart:695:101 - undefined_getter
+  error - The getter 'jm' isn't defined for the type 'DateTime' - lib\presentation\ima_notifications_view.dart:600:134 - undefined_getter
+  error - The instance member 'sampleCategories' can't be accessed in an initializer - lib\presentation\ima_product_categories_view.dart:208:8 - implicit_this_reference_in_initializer
+  error - The method 'QRCodePainter' isn't defined for the type '_ImaQrCodeViewState' - lib\presentation\ima_qr_code_view.dart:421:28 - undefined_method
+  error - The method 'QRCodePainter' isn't defined for the type '_ImaQrCodeViewState' - lib\presentation\ima_qr_code_view.dart:774:28 - undefined_method
+  error - Expected to find ')' - lib\presentation\ima_sales_forecast_view.dart:678:71 - expected_token
+  error - Expected to find ')' - lib\presentation\ima_sales_forecast_view.dart:779:86 - expected_token
+  error - The method 'WarehouseMapPainter' isn't defined for the type '_IwmBinLocationsViewState' - lib\presentation\iwm_bin_locations_view.dart:709:30 - undefined_method
+  error - The method 'ReceivingPerformancePainter' isn't defined for the type '_IwmReceivingViewState' - lib\presentation\iwm_receiving_view.dart:1307:30 - undefined_method
+  error - The method 'OptimizationTrendPainter' isn't defined for the type '_IwmStorageOptimizationViewState' - lib\presentation\iwm_storage_optimization_view.dart:1040:30 - undefined_method
+  error - The method 'CapacityTrendPainter' isn't defined for the type '_IwmWarehouseCapacityViewState' - lib\presentation\iwm_warehouse_capacity_view.dart:851:30 - undefined_method
+  error - The method 'GridPainter' isn't defined for the type '_IwmWarehouseLayoutViewState' - lib\presentation\iwm_warehouse_layout_view.dart:312:28 - undefined_method
+  error - The class 'String' doesn't have an unnamed constructor - lib\presentation\lca_invoice_generation_view.dart:195:39 - new_with_undefined_constructor_default
+  error - The returned type 'Set<Object>' isn't returnable from a 'bool' function, as required by the closure's context - lib\presentation\lca_task_deadlines_view.dart:323:60 - return_of_invalid_type_from_closure
+  error - Expected to find ',' - lib\presentation\lca_task_deadlines_view.dart:324:11 - expected_token
+  error - Undefined name 'days' - lib\presentation\lca_task_deadlines_view.dart:324:11 - undefined_identifier
+  error - Expected to find '}' - lib\presentation\lca_task_deadlines_view.dart:324:47 - expected_token
+  error - The argument type 'Null Function(dynamic, String?)?' can't be assigned to the parameter type 'dynamic Function(dynamic, String?)'.  - lib\presentation\lca_timesheet_view.dart:607:24 - argument_type_not_assignable
+  error - The method 'QDateTimePicker' isn't defined for the type '_NmaSocialSharingViewState' - lib\presentation\nma_social_sharing_view.dart:492:19 - undefined_method
+  error - The returned type 'num' isn't returnable from a 'int' function, as required by the closure's context - lib\presentation\nma_social_sharing_view.dart:758:90 - return_of_invalid_type_from_closure
+  error - The method 'PieChartPainter' isn't defined for the type '_PmaBudgetViewState' - lib\presentation\pma_budget_view.dart:317:24 - undefined_method
+  error - The method 'SplashBackgroundPainter' isn't defined for the type '_PmaSplashViewState' - lib\presentation\pma_splash_view.dart:124:18 - undefined_method
+  error - The method '_UploadDialog' isn't defined for the type '_PmaTaskAttachmentsViewState' - lib\presentation\pma_task_attachments_view.dart:215:29 - undefined_method
+  error - The method '_PreviewDialog' isn't defined for the type '_PmaTaskAttachmentsViewState' - lib\presentation\pma_task_attachments_view.dart:246:29 - undefined_method
+  error - The method '_ShareDialog' isn't defined for the type '_PmaTaskAttachmentsViewState' - lib\presentation\pma_task_attachments_view.dart:253:29 - undefined_method
+  error - The method '_EditFileDialog' isn't defined for the type '_PmaTaskAttachmentsViewState' - lib\presentation\pma_task_attachments_view.dart:288:29 - undefined_method
+  error - The method '_ReplyDialog' isn't defined for the type '_PmaTaskCommentsViewState' - lib\presentation\pma_task_comments_view.dart:185:29 - undefined_method
+  error - The method '_EditCommentDialog' isn't defined for the type '_PmaTaskCommentsViewState' - lib\presentation\pma_task_comments_view.dart:204:29 - undefined_method
+  error - The method '_HistoryDetailDialog' isn't defined for the type '_PmaTaskHistoryViewState' - lib\presentation\pma_task_history_view.dart:274:29 - undefined_method
+  error - Undefined name 'TextS' - lib\presentation\pos_bundle_products_view.dart:495:36 - undefined_identifier
+  error - Expected to find ',' - lib\presentation\pos_bundle_products_view.dart:495:44 - expected_token
+  error - The method 'tyle' isn't defined for the type '_PosBundleProductsViewState' - lib\presentation\pos_bundle_products_view.dart:495:44 - undefined_method
+  error - Too many positional arguments: 1 expected, but 2 found - lib\presentation\pos_bundle_products_view.dart:495:44 - extra_positional_arguments_could_be_named
+  error - The getter 'kkss' isn't defined for the type 'DateTime' - lib\presentation\pos_print_receipt_view.dart:192:59 - undefined_getter
+  error - The instance member 'movementSummary' can't be accessed in an initializer - lib\presentation\pos_stock_movement_view.dart:147:16 - implicit_this_reference_in_initializer
+  error - The instance member 'movementSummary' can't be accessed in an initializer - lib\presentation\pos_stock_movement_view.dart:148:16 - implicit_this_reference_in_initializer
+  error - The instance member 'movementSummary' can't be accessed in an initializer - lib\presentation\pos_stock_movement_view.dart:155:16 - implicit_this_reference_in_initializer
+  error - The instance member 'movementSummary' can't be accessed in an initializer - lib\presentation\pos_stock_movement_view.dart:156:16 - implicit_this_reference_in_initializer
+  error - The instance member 'movementSummary' can't be accessed in an initializer - lib\presentation\pos_stock_movement_view.dart:163:16 - implicit_this_reference_in_initializer
+  error - The instance member 'movementSummary' can't be accessed in an initializer - lib\presentation\pos_stock_movement_view.dart:171:16 - implicit_this_reference_in_initializer
+  error - The instance member 'movementSummary' can't be accessed in an initializer - lib\presentation\pos_stock_movement_view.dart:179:16 - implicit_this_reference_in_initializer
+  error - The getter 'kkss' isn't defined for the type 'DateTime' - lib\presentation\pos_transaction_complete_view.dart:196:122 - undefined_getter
+  error - The method 'BlurEffectPainter' isn't defined for the type '_PpaBlurEffectsViewState' - lib\presentation\ppa_blur_effects_view.dart:98:36 - undefined_method
+  error - The method 'BrushPreviewPainter' isn't defined for the type '_PpaBrushSettingsViewState' - lib\presentation\ppa_brush_settings_view.dart:136:34 - undefined_method
+  error - The method 'BrushPreviewPainter' isn't defined for the type '_PpaBrushSettingsViewState' - lib\presentation\ppa_brush_settings_view.dart:482:38 - undefined_method
+  error - The method 'GridPainter' isn't defined for the type '_PpaCameraViewState' - lib\presentation\ppa_camera_view.dart:251:34 - undefined_method
+  error - The method 'CurveGraphPainter' isn't defined for the type '_PpaCurvesViewState' - lib\presentation\ppa_curves_view.dart:192:34 - undefined_method
+  error - The method 'DrawingCanvasPainter' isn't defined for the type '_PpaDrawingToolsViewState' - lib\presentation\ppa_drawing_tools_view.dart:130:36 - undefined_method
+  error - The method 'HistogramPainter' isn't defined for the type '_PpaExposureSettingsViewState' - lib\presentation\ppa_exposure_settings_view.dart:200:36 - undefined_method
+  error - The method 'ZebraPainter' isn't defined for the type '_PpaExposureSettingsViewState' - lib\presentation\ppa_exposure_settings_view.dart:217:36 - undefined_method
+  error - The argument type 'String' can't be assigned to the parameter type 'Map<String, dynamic>'.  - lib\presentation\ppa_hue_temperature_view.dart:76:27 - argument_type_not_assignable
+  error - The argument type 'String' can't be assigned to the parameter type 'Map<String, dynamic>'.  - lib\presentation\ppa_hue_temperature_view.dart:99:29 - argument_type_not_assignable
+  error - The method 'GridPainter' isn't defined for the type '_PpaLandscapeModeViewState' - lib\presentation\ppa_landscape_mode_view.dart:83:34 - undefined_method
+  error - The method 'HistogramPainter' isn't defined for the type '_PpaLevelsViewState' - lib\presentation\ppa_levels_view.dart:142:42 - undefined_method
+  error - The method 'LevelGraphPainter' isn't defined for the type '_PpaLevelsViewState' - lib\presentation\ppa_levels_view.dart:200:32 - undefined_method
+  error - The method 'HistogramPainter' isn't defined for the type '_PpaProModeViewState' - lib\presentation\ppa_pro_mode_view.dart:204:36 - undefined_method
+  error - Expected to find ')' - lib\presentation\rfs_cost_management_view.dart:193:93 - expected_token
+  error - The instance member 'drivers' can't be accessed in an initializer - lib\presentation\rfs_delivery_management_view.dart:144:8 - implicit_this_reference_in_initializer
+  error - The argument type 'Color' can't be assigned to the parameter type 'IconData'.  - lib\presentation\rfs_food_cost_analysis_view.dart:498:171 - argument_type_not_assignable
+  error - 5 positional arguments expected by '_buildProfitMetricCard', but 4 found - lib\presentation\rfs_food_cost_analysis_view.dart:498:180 - not_enough_positional_arguments
+  error - The argument type 'Color' can't be assigned to the parameter type 'IconData'.  - lib\presentation\rfs_food_cost_analysis_view.dart:499:145 - argument_type_not_assignable
+  error - 5 positional arguments expected by '_buildProfitMetricCard', but 4 found - lib\presentation\rfs_food_cost_analysis_view.dart:499:157 - not_enough_positional_arguments
+  error - The element type 'Map<String, dynamic>' can't be assigned to the list type 'Widget' - lib\presentation\rfs_loyalty_program_view.dart:816:20 - list_element_type_not_assignable
+  error - This expression has a type of 'void' so its value can't be used - lib\presentation\rfs_loyalty_program_view.dart:818:21 - use_of_void_result
+  error - The method 'RestaurantLayoutPainter' isn't defined for the type '_RfsTableStatusViewState' - lib\presentation\rfs_table_status_view.dart:348:32 - undefined_method
+  error - A value of type 'String?' can't be assigned to a variable of type 'String' - lib\presentation\rha_employee_profile_view.dart:612:42 - invalid_assignment
+  error - The method 'QMultiSelect' isn't defined for the type '_RhaLeaveBalanceViewState' - lib\presentation\rha_leave_balance_view.dart:1226:11 - undefined_method
+  error - The getter 'gold' isn't defined for the type 'Colors' - lib\presentation\rha_org_chart_view.dart:209:42 - undefined_getter
+  error - The getter 'gold' isn't defined for the type 'Colors' - lib\presentation\rha_org_chart_view.dart:230:45 - undefined_getter
+  error - The instance member 'technicalSkills' can't be accessed in an initializer - lib\presentation\rha_performance_reviews_view.dart:72:44 - implicit_this_reference_in_initializer
+  error - The instance member 'communication' can't be accessed in an initializer - lib\presentation\rha_performance_reviews_view.dart:73:41 - implicit_this_reference_in_initializer
+  error - The instance member 'teamwork' can't be accessed in an initializer - lib\presentation\rha_performance_reviews_view.dart:74:36 - implicit_this_reference_in_initializer
+  error - The instance member 'leadership' can't be accessed in an initializer - lib\presentation\rha_performance_reviews_view.dart:75:38 - implicit_this_reference_in_initializer
+  error - The instance member 'problemSolving' can't be accessed in an initializer - lib\presentation\rha_performance_reviews_view.dart:76:43 - implicit_this_reference_in_initializer
+  error - The getter 'gold' isn't defined for the type 'Colors' - lib\presentation\rha_team_structure_view.dart:318:43 - undefined_getter
+  error - The instance member 'debtToIncomeRatio' can't be accessed in an initializer - lib\presentation\rma_affordability_calculator_view.dart:115:21 - implicit_this_reference_in_initializer
+  error - The instance member 'debtToIncomeRatio' can't be accessed in an initializer - lib\presentation\rma_affordability_calculator_view.dart:116:17 - implicit_this_reference_in_initializer
+  error - The instance member 'debtToIncomeRatio' can't be accessed in an initializer - lib\presentation\rma_affordability_calculator_view.dart:116:56 - implicit_this_reference_in_initializer
+  error - The instance member 'debtToIncomeRatio' can't be accessed in an initializer - lib\presentation\rma_affordability_calculator_view.dart:117:16 - implicit_this_reference_in_initializer
+  error - The instance member 'debtToIncomeRatio' can't be accessed in an initializer - lib\presentation\rma_affordability_calculator_view.dart:117:56 - implicit_this_reference_in_initializer
+  error - The argument type 'double?' can't be assigned to the parameter type 'num'.  - lib\presentation\rma_closing_costs_view.dart:373:71 - argument_type_not_assignable
+  error - The method 'addListener' can't be unconditionally invoked because the receiver can be 'null' - lib\presentation\rma_luxury_properties_view.dart:192:23 - unchecked_use_of_nullable_value
+  error - The property 'indexIsChanging' can't be unconditionally accessed because the receiver can be 'null' - lib\presentation\rma_luxury_properties_view.dart:193:29 - unchecked_use_of_nullable_value
+  error - The property 'index' can't be unconditionally accessed because the receiver can be 'null' - lib\presentation\rma_luxury_properties_view.dart:194:40 - unchecked_use_of_nullable_value
+  error - The method 'TrianglePainter' isn't defined for the type '_RmaMapSearchViewState' - lib\presentation\rma_map_search_view.dart:195:42 - undefined_method
+  error - The method 'addListener' can't be unconditionally invoked because the receiver can be 'null' - lib\presentation\rma_property_alerts_view.dart:168:23 - unchecked_use_of_nullable_value
+  error - The property 'indexIsChanging' can't be unconditionally accessed because the receiver can be 'null' - lib\presentation\rma_property_alerts_view.dart:169:29 - unchecked_use_of_nullable_value
+  error - The property 'index' can't be unconditionally accessed because the receiver can be 'null' - lib\presentation\rma_property_alerts_view.dart:170:40 - unchecked_use_of_nullable_value
+  error - The method 'ComparisonRow' isn't defined for the type '_RmaPropertyComparisonViewState' - lib\presentation\rma_property_comparison_view.dart:360:15 - undefined_method
+  error - The method 'ComparisonRow' isn't defined for the type '_RmaPropertyComparisonViewState' - lib\presentation\rma_property_comparison_view.dart:361:15 - undefined_method
+  error - The method 'ComparisonRow' isn't defined for the type '_RmaPropertyComparisonViewState' - lib\presentation\rma_property_comparison_view.dart:362:15 - undefined_method
+  error - The method 'ComparisonRow' isn't defined for the type '_RmaPropertyComparisonViewState' - lib\presentation\rma_property_comparison_view.dart:363:15 - undefined_method
+  error - The method 'ComparisonRow' isn't defined for the type '_RmaPropertyComparisonViewState' - lib\presentation\rma_property_comparison_view.dart:364:15 - undefined_method
+  error - The method 'ComparisonRow' isn't defined for the type '_RmaPropertyComparisonViewState' - lib\presentation\rma_property_comparison_view.dart:372:15 - undefined_method
+  error - The method 'ComparisonRow' isn't defined for the type '_RmaPropertyComparisonViewState' - lib\presentation\rma_property_comparison_view.dart:373:15 - undefined_method
+  error - The method 'ComparisonRow' isn't defined for the type '_RmaPropertyComparisonViewState' - lib\presentation\rma_property_comparison_view.dart:374:15 - undefined_method
+  error - The method 'ComparisonRow' isn't defined for the type '_RmaPropertyComparisonViewState' - lib\presentation\rma_property_comparison_view.dart:375:15 - undefined_method
+  error - The method 'ComparisonRow' isn't defined for the type '_RmaPropertyComparisonViewState' - lib\presentation\rma_property_comparison_view.dart:376:15 - undefined_method
+  error - The method 'ComparisonRow' isn't defined for the type '_RmaPropertyComparisonViewState' - lib\presentation\rma_property_comparison_view.dart:377:15 - undefined_method
+  error - The method 'ComparisonRow' isn't defined for the type '_RmaPropertyComparisonViewState' - lib\presentation\rma_property_comparison_view.dart:385:15 - undefined_method
+  error - The method 'ComparisonRow' isn't defined for the type '_RmaPropertyComparisonViewState' - lib\presentation\rma_property_comparison_view.dart:386:15 - undefined_method
+  error - The method 'ComparisonRow' isn't defined for the type '_RmaPropertyComparisonViewState' - lib\presentation\rma_property_comparison_view.dart:387:15 - undefined_method
+  error - The method 'ComparisonRow' isn't defined for the type '_RmaPropertyComparisonViewState' - lib\presentation\rma_property_comparison_view.dart:395:15 - undefined_method
+  error - The method 'ComparisonRow' isn't defined for the type '_RmaPropertyComparisonViewState' - lib\presentation\rma_property_comparison_view.dart:396:15 - undefined_method
+  error - The method 'ComparisonRow' isn't defined for the type '_RmaPropertyComparisonViewState' - lib\presentation\rma_property_comparison_view.dart:404:15 - undefined_method
+  error - The method 'ComparisonRow' isn't defined for the type '_RmaPropertyComparisonViewState' - lib\presentation\rma_property_comparison_view.dart:405:15 - undefined_method
+  error - The name 'ComparisonRow' isn't a type, so it can't be used as a type argument - lib\presentation\rma_property_comparison_view.dart:461:53 - non_type_as_type_argument
+  error - The property 'label' can't be unconditionally accessed because the receiver can be 'null' - lib\presentation\rma_property_comparison_view.dart:494:29 - unchecked_use_of_nullable_value
+  error - The property 'values' can't be unconditionally accessed because the receiver can be 'null' - lib\presentation\rma_property_comparison_view.dart:501:28 - unchecked_use_of_nullable_value
+  error - Undefined name 'walking' - lib\presentation\rma_transportation_view.dart:17:35 - undefined_identifier
+  error - Expected to find ',' - lib\presentation\rma_transportation_view.dart:17:42 - expected_token
+  error - Expressions can't be used in a map literal - lib\presentation\rma_transportation_view.dart:17:42 - expression_in_map
+  error - Expected to find ',' - lib\presentation\rma_transportation_view.dart:17:46 - expected_token
+  error - Expressions can't be used in a map literal - lib\presentation\rma_transportation_view.dart:17:46 - expression_in_map
+  error - Undefined name 'icon' - lib\presentation\rma_transportation_view.dart:17:46 - undefined_identifier
+  error - Expected to find ',' - lib\presentation\rma_transportation_view.dart:17:50 - expected_token
+  error - Expressions can't be used in a map literal - lib\presentation\rma_transportation_view.dart:17:50 - expression_in_map
+  error - Unterminated string literal - lib\presentation\rma_transportation_view.dart:17:75 - unterminated_string_literal
+  error - Expected to find ',' - lib\presentation\rma_transportation_view.dart:18:5 - expected_token
+  error - Expressions can't be used in a map literal - lib\presentation\rma_transportation_view.dart:18:5 - expression_in_map
+  error - Expected to find '}' - lib\presentation\rma_transportation_view.dart:19:3 - expected_token
+  error - The method 'addListener' can't be unconditionally invoked because the receiver can be 'null' - lib\presentation\rma_vacation_rentals_view.dart:204:23 - unchecked_use_of_nullable_value
+  error - The property 'indexIsChanging' can't be unconditionally accessed because the receiver can be 'null' - lib\presentation\rma_vacation_rentals_view.dart:205:29 - unchecked_use_of_nullable_value
+  error - The property 'index' can't be unconditionally accessed because the receiver can be 'null' - lib\presentation\rma_vacation_rentals_view.dart:206:40 - unchecked_use_of_nullable_value
+  error - The argument type 'String' can't be assigned to the parameter type 'DateTime'.  - lib\presentation\tpm_create_task_view.dart:298:70 - argument_type_not_assignable
+  error - Too many positional arguments: 0 expected, but 1 found - lib\presentation\tpm_data_export_view.dart:562:70 - extra_positional_arguments
+  error - The name '_buildExportHistoryCard' is already defined - lib\presentation\tpm_data_export_view.dart:569:10 - duplicate_definition
+  error - The argument type 'String' can't be assigned to the parameter type 'DateTime'.  - lib\presentation\tpm_edit_task_view.dart:416:76 - argument_type_not_assignable
+  error - Too many positional arguments: 0 expected, but 1 found - lib\presentation\tpm_mobile_notifications_view.dart:554:9 - extra_positional_arguments_could_be_named
+  error - Undefined name 'spacin' - lib\presentation\tpm_mobile_notifications_view.dart:554:9 - undefined_identifier
+  error - Expected to find ',' - lib\presentation\tpm_mobile_notifications_view.dart:555:1 - expected_token
+  error - The named parameter 'g' isn't defined - lib\presentation\tpm_mobile_notifications_view.dart:555:1 - undefined_named_parameter
+  error - The method 'capitalizeFirst' isn't defined for the type 'String' - lib\presentation\tpm_privacy_settings_view.dart:1117:16 - undefined_method
+  error - The method 'MoonPhasePainter' isn't defined for the type '_WcaMoonPhasesViewState' - lib\presentation\wca_moon_phases_view.dart:168:32 - undefined_method
+  error - Expected to find ')' - lib\presentation\wca_moon_phases_view.dart:306:59 - expected_token
+  error - The method 'MoonPhasePainter' isn't defined for the type '_WcaMoonPhasesViewState' - lib\presentation\wca_moon_phases_view.dart:442:44 - undefined_method
+  error - The method 'MoonPhasePainter' isn't defined for the type '_WcaMoonPhasesViewState' - lib\presentation\wca_moon_phases_view.dart:505:42 - undefined_method
+  error - The method 'SunArcPainter' isn't defined for the type '_WcaSunriseSunsetViewState' - lib\presentation\wca_sunrise_sunset_view.dart:130:32 - undefined_method
+  error - 2 positional arguments expected by '_buildWindArrow', but 0 found - lib\presentation\wca_wind_map_view.dart:363:17 - not_enough_positional_arguments
+  error - The named parameter 'speed' isn't defined - lib\presentation\wca_wind_map_view.dart:363:17 - undefined_named_parameter
+  error - The named parameter 'direction' isn't defined - lib\presentation\wca_wind_map_view.dart:364:17 - undefined_named_parameter
+  error - The function 'EcmKeynoteSessionsView' isn't defined - lib\views.dart:27090:15 - undefined_function
+  error - The function 'EcmKeynoteSessionsView' isn't defined - lib\views.dart:27092:25 - undefined_function
