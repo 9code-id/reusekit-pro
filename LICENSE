@@ -1,14 +1,21 @@
-# Reusekit License
+MIT License
 
-This project is licensed and should not be hosted on public GitHub repositories. By using this UI Kit, you agree to comply with the following terms:
+Copyright (c) 2026 9code-id
 
-1. **Usage**: You are allowed to use this UI Kit in personal and commercial projects, but you are not permitted to distribute, sell, resell, or host it on public repositories without written permission from the license owner.
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-2. **Purchase**: To purchase this UI Kit, please visit:  
-   [https://tinyurl.com/reusekit](https://tinyurl.com/reusekit)
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-3. **Ownership**: Reusekit is a UI Kit created by DenyOcr to enhance productivity when building user interfaces (UIs) in Flutter.
-
-4. **Prohibition**: You are not allowed to host this project on public GitHub repositories or similar platforms without permission. Additionally, you are strictly prohibited from selling or reselling this project as another UI Kit or similar product.
-
-By using this UI Kit, you agree to adhere to all the terms outlined above. If you have any questions or need further clarification, please contact the license owner.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
